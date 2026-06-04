@@ -6,7 +6,7 @@
 
 ## The zero-risk way to try it
 
-You don't have to leave Glyphs to use Fontra. Fontra opens `.glyphs` and `.glyphspackage` files directly (via the bundled fontra-glyphs plugin ⚠), and **auto-reloads when the file changes on disk**. So:
+You don't have to leave Glyphs to use Fontra. Fontra opens `.glyphs` and `.glyphspackage` files directly — support is built in, nothing to install — and **auto-reloads when the file changes on disk**. So:
 
 1. Drop your `.glyphs` file onto Fontra Pak.
 2. Keep working in Glyphs. Hit save.
