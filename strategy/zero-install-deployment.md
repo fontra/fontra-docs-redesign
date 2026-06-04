@@ -1,6 +1,6 @@
 # Zero-Install Try: Deployment Plan for a Public Fontra Server
 
-*Follow-up to doc 03 §3.5. Premise: a server is available online. Question: can people use Fontra on it directly, and what blocks it? Everything below is grounded in the actual source (`src/fontra/__main__.py`, `src/fontra/filesystem/projectmanager.py`, `src/fontra/core/fonthandler.py` behavior as visible from the manager). June 2026.*
+*Follow-up to the [documentation strategy](documentation-strategy.md) §3.5. Premise: a server is available online. Question: can people use Fontra on it directly, and what blocks it? Everything below is grounded in the actual source (`src/fontra/__main__.py`, `src/fontra/filesystem/projectmanager.py`, `src/fontra/core/fonthandler.py` behavior as visible from the manager). June 2026.*
 
 ---
 
@@ -33,7 +33,7 @@ Honest limitation: look, don't touch. It proves "Fontra runs in a browser" but n
 
 ### Tier B — ephemeral sandboxes (effort: ~1–2 weeks dev)
 
-What visitors get: a **Try Fontra** button → pick a starter (empty font / the doc-07 tutorial font / a variable-components playground) → a private copy at `try.fontra.xyz/s/<random-id>/…` → full editing for a limited lifetime → download your result.
+What visitors get: a **Try Fontra** button → pick a starter (empty font / the [tutorial](../drafts/tutorial-your-first-variable-font.md) font / a variable-components playground) → a private copy at `try.fontra.xyz/s/<random-id>/…` → full editing for a limited lifetime → download your result.
 
 Implementation is a custom project manager — the supported plugin route:
 
@@ -78,7 +78,7 @@ Ordered by severity; the first three are the real ones.
 
 **B1 — Path handling must be reviewed before public exposure.** `_getProjectPath()` joins URL-derived path parts onto the root (`rootPath.joinpath(*path.split("/"))`) without normalizing — a crafted identifier containing `..` can escape the root (limited to font-extension files, but still: any `.ttf`/`.ufo` on the box). And the documented `'-'` root mode deliberately serves *arbitrary OS paths* — never publicly. Fix is a few lines (`resolve()` + `relative_to(rootPath)` check) and a candidate upstream PR regardless of the demo. The container boundary (nothing on disk but demo fonts) is the belt to this suspender.
 
-**B2 — No download path on a plain server.** "Export as" is provided by an `ExportManager`, and the stock filesystem manager has `exportManager=None` — Fontra Pak supplies its own. A Tier-B visitor could design a font *but not take it home*, which kills the conversion moment ("install your font" is doc 07's payoff). Work item: a small server-side ExportManager that compiles to TTF/OTF in a temp dir and serves it as a download (the compile machinery exists; this is plumbing plus an HTTP route). Tier A doesn't need it.
+**B2 — No download path on a plain server.** "Export as" is provided by an `ExportManager`, and the stock filesystem manager has `exportManager=None` — Fontra Pak supplies its own. A Tier-B visitor could design a font *but not take it home*, which kills the conversion moment ("install your font" is the tutorial's payoff). Work item: a small server-side ExportManager that compiles to TTF/OTF in a temp dir and serves it as a download (the compile machinery exists; this is plumbing plus an HTTP route). Tier A doesn't need it.
 
 **B3 — No authentication or tenancy in the core (by design).** `authorize()` returns a constant; `getProjectList()` lists everything under the root. Fine for localhost, fatal for a shared editable server. Tier A sidesteps it (read-only); Tier B's session manager *is* the fix (capability URLs + per-token project lists). No accounts needed — and avoid building any: accounts would drag in GDPR machinery a demo doesn't want.
 

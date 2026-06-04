@@ -1,6 +1,6 @@
 # Your First Variable Font — a 30-Minute Fontra Tutorial
 
-*Draft of the doc-03 §3.1 "time-to-first-glyph" tutorial. Written for docs.fontra.xyz → Tutorials. Audience: someone who has never opened a font editor. Every UI claim below was checked against the current reference docs; items marked ⚠ should be verified against the live app before publishing. 🎬 marks where a 10–20 s screen recording goes.*
+*Draft of the "time-to-first-glyph" tutorial proposed in the [documentation strategy](../strategy/documentation-strategy.md) (§3.1). Written for docs.fontra.xyz → Tutorials. Audience: someone who has never opened a font editor. Every UI claim below was checked against the current reference docs; items marked ⚠ should be verified against the live app before publishing. 🎬 marks where a 10–20 s screen recording goes.*
 
 ---
 

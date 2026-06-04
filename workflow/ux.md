@@ -1,6 +1,6 @@
 # A Friendlier UX for Fontra Workflow
 
-*Companion to documents 04–05. Question: would Workflow need a UI? Short answer: yes — but layered, and Fontra is unusually well positioned to build it cheaply. A clickable mockup accompanies this document (`06-workflow-ui-mockup.html` — open in a browser).*
+*Companion to the [Workflow documentation](documentation.md) and [proposed extensions](extensions.md). Question: would Workflow need a UI? Short answer: yes — but layered, and Fontra is unusually well positioned to build it cheaply. A clickable mockup accompanies this document ([`ui-mockup.html`](ui-mockup.html) — open in a browser).*
 
 ---
 
@@ -10,7 +10,7 @@ Workflow's *engine* is friendly (composable, safe, lazy). The *experience* aroun
 
 1. **Blank-page problem** — you start from an empty YAML file and a vocabulary you can't discover without reading source code.
 2. **Blind authoring** — arguments are typed against invisible schemas; you learn the argument names by being wrong.
-3. **Blind execution** — you see the result only at the end, in an output file; intermediate states are invisible (unless you know the `yaml`-backend trick).
+3. **Blind execution** — you see the result only at the end, in an output file; intermediate states are invisible (unless you know the [`yaml`-backend trick](documentation.md)).
 4. **Errors arrive late and deep** — at step setup or mid-pull, as tracebacks.
 5. **Audience mismatch** — the people who would benefit most (designers doing production) are exactly the people YAML excludes.
 
@@ -18,7 +18,7 @@ Note that 1–4 hurt *engineers too*. So the answer to "does it need UI?" is lay
 
 ## 2. Layer 0 — friendlier with no UI at all
 
-These come first because they also become the *foundation* of any GUI (doc 05: B1, B2):
+These come first because they also become the *foundation* of any GUI ([extensions](extensions.md) B1, B2):
 
 - `fontra-workflow list-actions` — discoverability at the CLI.
 - JSON Schema generated from the action dataclasses → upfront config validation with line numbers, *and* free autocomplete + inline docs in VS Code/Zed via YAML language servers. For the engineer audience, schema-powered YAML editing **is** the UI.
@@ -39,7 +39,7 @@ Not a separate app — a fourth view alongside editor / font overview / font inf
 
 ### 4.1 Left: action palette
 
-Searchable, grouped by category (the doc-04 taxonomy), each action with a one-line description and its arguments — all generated from the introspection layer. Drag onto the pipeline, or click ＋ between steps. Plugin actions (fontra-compile etc.) appear automatically because registration is already dynamic.
+Searchable, grouped by category (the taxonomy from the [Workflow documentation](documentation.md)), each action with a one-line description and its arguments — all generated from the introspection layer. Drag onto the pipeline, or click ＋ between steps. Plugin actions (fontra-compile etc.) appear automatically because registration is already dynamic.
 
 ### 4.2 Center: the pipeline as a vertical step stack
 
@@ -61,7 +61,7 @@ Searchable, grouped by category (the doc-04 taxonomy), each action with a one-li
 - `subset-glyphs` → a glyph-set field backed by the font overview's cell picker;
 - file arguments → file pickers; enums (`layoutHandling`) → dropdowns with explanations.
 
-**Preview (bottom), the gem:** a preview pin ◉ that sits *between* steps. The pane shows the font as it exists at the pinned point — mini glyph grid, sample text line, glyph/axis/source counts. Move the pin down the stack and watch the font transform step by step. Add a before/after diff toggle (changed glyphs highlighted, count deltas). Because each boundary is already a backend, this is the cheapest impressive feature in the whole design — it's the doc-04 `yaml`-backend trick given a handle.
+**Preview (bottom), the gem:** a preview pin ◉ that sits *between* steps. The pane shows the font as it exists at the pinned point — mini glyph grid, sample text line, glyph/axis/source counts. Move the pin down the stack and watch the font transform step by step. Add a before/after diff toggle (changed glyphs highlighted, count deltas). Because each boundary is already a backend, this is the cheapest impressive feature in the whole design — it's the `yaml`-backend trick (Workflow [documentation](documentation.md) §6) given a handle.
 
 ### 4.4 Bottom: run bar
 
@@ -69,13 +69,13 @@ Output folder, Run button, per-output progress (glyph counts — the engine know
 
 ### 4.5 Onboarding: recipe gallery
 
-"New workflow" opens a gallery, not a blank canvas: *Webfont subset*, *Extract instances*, *Merge fonts*, *Ship finished glyphs*, *Convert format* — the doc-04 cookbook as starting templates (and the C3 recipe registry as its upstream). The blank-page problem dies here.
+"New workflow" opens a gallery, not a blank canvas: *Webfont subset*, *Extract instances*, *Merge fonts*, *Ship finished glyphs*, *Convert format* — the [documentation](documentation.md) cookbook as starting templates (and the extensions' C3 recipe registry as its upstream). The blank-page problem dies here.
 
 ## 5. How, technically (and cheaply)
 
 | Piece | Cost driver | Why it's cheap here |
 |---|---|---|
-| Action palette, inspector forms | schema | Generated from dataclasses (doc 05 B1/B2) — no hand-built forms |
+| Action palette, inspector forms | schema | Generated from dataclasses (extensions B1/B2) — no hand-built forms |
 | Step stack ↔ YAML sync | round-trip fidelity | The step tree *is* the YAML structure; a comment-preserving YAML lib is the only subtlety |
 | Per-step preview | serving intermediate fonts | `WorkflowBackend` already wraps a pipeline as a font; generalize to "backend at step *k*", serve like any project |
 | Live preview components | UI | Reuse: font overview grid, axis sliders, text preview with shaping (2026 HarfBuzz work) |
@@ -90,7 +90,7 @@ The deliberately *missing* piece is a new runtime: the GUI authors and runs the 
 2. **Phase 1 — read-only Workflow viewer.** Open a `.yaml`, see the step stack, move the preview pin. No editing, no running. Already a debugger people would love; minimal sync complexity.
 3. **Phase 2 — inspector editing + validation + Run.** Forms, badges, run bar. Fontra Pak grows a "Run workflow…" menu item.
 4. **Phase 3 — authoring comfort.** Palette drag-and-drop, recipe gallery, substitution run-dialogs, diff preview.
-5. **Phase 4 — ambient ideas.** Watch mode wired to the preview (`--watch`, doc 05 B3); "export this font-overview selection as a subset-glyphs step"; collaborative editing of pipelines (the server is already multi-client).
+5. **Phase 4 — ambient ideas.** Watch mode wired to the preview (`--watch`, extensions B3); "export this font-overview selection as a subset-glyphs step"; collaborative editing of pipelines (the server is already multi-client).
 
 ## 7. Non-goals
 

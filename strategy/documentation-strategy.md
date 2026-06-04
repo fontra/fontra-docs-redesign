@@ -40,7 +40,7 @@ Fontra is visually impressive; nested variable components interpolating live sel
 
 ### 3.4 Workflow: cookbook first, reference second
 
-Currently invisible (see document 02). Two deliverables:
+Currently invisible (see the [Workflow analysis](../understanding/workflow-analysis.md)). Two deliverables:
 
 1. **Cookbook** — copy-pasteable YAML recipes: subset a font for web; extract one weight from a variable family; cubic→quadratic conversion; merge two fonts; ship only glyphs with "finished" status; scale a font's UPM. People adopt CLI tools by modifying recipes, not by composing from reference.
 2. **Generated reference** — every action with arguments, types, defaults. The actions are dataclasses; the reference table can be **auto-generated from the source**, so it never rots. This also nudges the codebase toward docstrings on actions.

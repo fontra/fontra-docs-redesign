@@ -1,6 +1,6 @@
 # Fontra Workflow — Proposed Extensions
 
-*Companion to document 04. Each proposal states the gap, the idea, and a usage sketch. Grouped: new actions, engine features, ecosystem integrations. Prioritization at the end.*
+*Companion to the [Workflow documentation](documentation.md). Each proposal states the gap, the idea, and a usage sketch. Grouped: new actions, engine features, ecosystem integrations. Prioritization at the end.*
 
 ---
 
@@ -154,7 +154,7 @@ The `yaml` backend already previews pipelines read-only. Next steps, in increasi
 
 ### C3. Recipe registry
 
-A `fontra/workflow-recipes` repo of curated, tested configs (the doc-04 cookbook, grown by PRs). Each recipe is runnable against a small test font in CI, so recipes can't rot. Low-cost community on-ramp: contributing a YAML file is the easiest first contribution imaginable.
+A `fontra/workflow-recipes` repo of curated, tested configs (the cookbook from the [Workflow documentation](documentation.md), grown by PRs). Each recipe is runnable against a small test font in CI, so recipes can't rot. Low-cost community on-ramp: contributing a YAML file is the easiest first contribution imaginable.
 
 ---
 

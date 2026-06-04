@@ -106,7 +106,7 @@ Third-party actions register through the `fontra.workflow.actions` entry-point g
 
 Strengths: a genuinely clean architecture (pull-based backend chaining), a complete-enough action vocabulary for real production, templating + chaining for reuse, and the editor/pipeline sharing one data model.
 
-Weakness: **it is publicly invisible.** No page on docs.fontra.xyz mentions it; the only documentation is the source code. For a tool whose audience (font engineers, production people) is exactly the audience that evaluates software by reading docs, this is the largest gap between capability and discoverability in the whole project. (See document 03.)
+Weakness: **it is publicly invisible.** No page on docs.fontra.xyz mentions it; the only documentation is the source code. For a tool whose audience (font engineers, production people) is exactly the audience that evaluates software by reading docs, this is the largest gap between capability and discoverability in the whole project. (See the [documentation strategy](../strategy/documentation-strategy.md).)
 
 ---
 

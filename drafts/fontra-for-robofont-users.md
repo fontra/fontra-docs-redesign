@@ -25,7 +25,7 @@ No conversion, no export, no risk: it's *your* UFOs on disk, edited by either ap
 | Space Center | Canvas + **Preview text** panel + `space` preview; **sidebearing tool**, numeric metrics in Glyph info | Metrics proofing happens where you edit, with interpolation live |
 | Inspector (transform, points) | **Selection info** + **Transformation** panels | Editable dimension fields included |
 | Layers | **Source layers** (foreground + backgrounds per source) | Backgrounds don't affect interpolation and needn't be compatible |
-| Mark colors | **Status colors** (*Font → Status definitions*) | Semantic by design (in progress / checking / finished…), customizable, and queryable in the Workflow pipeline |
+| Mark colors | **Status colors** (*Font → Status definitions*) | Semantic by design (in progress / checking / finished…), customizable, and queryable in the [Workflow](../workflow/documentation.md) pipeline |
 | Groups & kerning editor | **Kerning tool** in the editor ⚠ group editing scope | Kern per source with live interpolation between them |
 | Features (feature text editor) | *Font → Features* | FEA editing; live shaping preview is the headline 2026 feature |
 | Sets / smart sets | **Glyph sets** in the font overview | Preset and custom, shareable ⚠ |
@@ -44,7 +44,7 @@ Shortcuts are **customizable** (*Fontra → Application settings*) with JSON imp
 
 ## What you'll miss (today)
 
-**Scripting, scripting, scripting.** RoboFont is a Python IDE wearing a font editor's clothes; Fontra currently has no macro window, no fontParts, no observers, no startup scripts. Two partial consolations: the **Workflow** engine covers much of what production scripts do (subsetting, designspace surgery, batch conversion — declaratively, see the Workflow docs), and the server's Python core means the 2026 scripting API lands in familiar territory. Also missing: test-install, the extension ecosystem, custom tools, global (font-level) guidelines ⚠, and manual hinting.
+**Scripting, scripting, scripting.** RoboFont is a Python IDE wearing a font editor's clothes; Fontra currently has no macro window, no fontParts, no observers, no startup scripts. Two partial consolations: the **Workflow** engine covers much of what production scripts do (subsetting, designspace surgery, batch conversion — declaratively — see the [Workflow documentation](../workflow/documentation.md)), and the server's Python core means the 2026 scripting API lands in familiar territory. Also missing: test-install, the extension ecosystem, custom tools, global (font-level) guidelines ⚠, and manual hinting.
 
 If RoboFont is your scripting platform more than your drawing tool, Fontra today is a complement, not a replacement — and the side-by-side mode is built for exactly that.
 
