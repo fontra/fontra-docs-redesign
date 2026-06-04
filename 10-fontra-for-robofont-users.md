@@ -6,7 +6,7 @@
 
 ## The zero-risk way to try it
 
-You and Fontra already share a data model: **UFO + designspace are Fontra's native read/write formats.** And Fontra auto-reloads on external changes — including glyph edits, kerning, groups, features, and font info in `.ufo`s ⚠ (recently extended). So:
+You and Fontra already share a data model: **UFO + designspace are Fontra's native read/write formats.** Fontra watches the files and reloads precisely what changed: `.glif` edits per glyph, `kerning.plist`/`groups.plist`, `features.fea`, and `fontinfo.plist`. Font info coverage is near-exhaustive — the common fields are first-class, and the long tail of UFO fontinfo (OS/2 metrics and Panose, hhea/vhea, PostScript blues and stems…) round-trips untouched. So:
 
 1. Drop your `.designspace` (or a single `.ufo`) onto Fontra Pak.
 2. Keep working in RoboFont. Save.
