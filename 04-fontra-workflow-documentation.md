@@ -24,7 +24,7 @@ $ fontra-workflow minimal.yaml --output-dir build
 
 Use it for: format conversion, subsetting, designspace surgery (dropping/trimming/renaming axes), instance extraction, merging fonts, generating feature code from kerning or anchors, production QA gates, and — via the fontra-compile plugin — compiling binaries with fontmake, fontc, or Fontra's own VARC compiler.
 
-Workflow operates on the same font object model as the Fontra editor. Anything Fontra can open (.designspace, .ufo, .ttf, .otf, .woff, .woff2, .ttx, .fontra, and .glyphs/.glyphspackage with the fontra-glyphs plugin) is a valid pipeline input.
+Workflow operates on the same font object model as the Fontra editor. Anything Fontra can open (.designspace, .ufo, .ttf, .otf, .woff, .woff2, .ttx, .fontra, .glyphs/.glyphspackage) is a valid pipeline input. (Note: .glyphs support is built into Fontra Pak; in a bare `pip install fontra` CLI environment it comes from the `fontra-glyphs` package.)
 
 ---
 
@@ -246,7 +246,7 @@ Installing **fontra-compile** (`pip install fontra-compile`) registers three bin
 ```yaml
 steps:
   - input: fontra-read
-    source: MyFont.glyphs        # needs fontra-glyphs
+    source: MyFont.glyphs        # built into Fontra Pak; bare CLI: pip install fontra-glyphs
   - output: fontra-write
     destination: MyFont.designspace
 ```
