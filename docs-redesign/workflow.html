@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='73' font-size='64' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800'>F</text></svg>">
+<title>Workflow · Fontra Docs</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-active="workflow" data-top="workflow">
+<div id="chrome-top"></div>
+<div class="layout">
+  <aside id="chrome-side"></aside>
+  <div class="content">
+  <div class="page">
+    <article class="article">
+      <div class="breadcrumb"><a href="index.html">Docs</a> › Workflow</div>
+      <h1>Fontra Workflow</h1>
+      <p class="lede">A command-line tool for processing fonts in repeatable, declarative pipelines. Describe what should happen in a YAML file — read, filter, merge, write — and run it.</p>
+
+      <div class="callout note"><div class="h">New section</div><p>Workflow is powerful but currently undocumented on the live site. This is a proposed home for it: a recipe book up front, a generated action reference behind. <a href="about-redesign.html">Why →</a></p></div>
+
+      <h2 id="hello">A first pipeline</h2>
+      <pre><code># build.yaml
+steps:
+  - input: fontra-read
+    source: MyFont.designspace
+  - filter: subset-glyphs
+    glyphNamesFile: latin-basic.txt
+  - output: compile-fontmake
+    destination: MyFont-Subset.ttf</code></pre>
+      <pre><code>$ fontra-workflow build.yaml --output-dir build</code></pre>
+
+      <h2 id="recipes">Recipes</h2>
+      <p>Copy, paste, adjust. The fastest way to learn Workflow is to modify a recipe.</p>
+      <div class="cardgrid">
+        <a class="card" href="#"><div class="t">Subset a font for the web</div><div class="d">Keep a glyph set, drop the rest, compile.</div></a>
+        <a class="card" href="#"><div class="t">Extract a static instance</div><div class="d">Pin Weight 700 and export the Bold.</div></a>
+        <a class="card" href="#"><div class="t">Convert format</div><div class="d">.glyphs → .designspace, TTF → .fontra, etc.</div></a>
+        <a class="card" href="#"><div class="t">Merge two fonts</div><div class="d">Fold a symbols font into a text family.</div></a>
+        <a class="card" href="#"><div class="t">Ship only finished glyphs</div><div class="d">Filter by development status, then compile.</div></a>
+        <a class="card" href="#"><div class="t">Cubic → quadratic + round</div><div class="d">Production clean-up before export.</div></a>
+      </div>
+
+      <h2 id="concepts">How it works</h2>
+      <ul>
+        <li><strong>Five step types</strong> — <code>input</code>, <code>filter</code>, <code>output</code>, <code>fork</code>, <code>fork-merge</code>.</li>
+        <li><strong>Lazy &amp; pull-based</strong> — outputs pull glyphs through the chain; only what's written gets processed.</li>
+        <li><strong>Composable</strong> — every filter is itself a font, so any output can feed any input.</li>
+        <li><strong>Extensible</strong> — third-party actions register through an entry point (this is how <code>fontra-compile</code> adds its compilers).</li>
+      </ul>
+
+      <h2 id="reference">Action reference</h2>
+      <p>Every action with its arguments, types and defaults — covering axes &amp; designspace, glyphs &amp; outlines, subsetting, features &amp; kerning, and compilation.</p>
+      <div class="cardgrid">
+        <a class="card" href="#"><div class="t">All actions</div><div class="d">The complete catalog, grouped by purpose.</div><div class="meta"><span class="badge new">generated from source</span></div></a>
+        <a class="card" href="#"><div class="t">Writing your own action</div><div class="d">Subclass, override one hook, register.</div></a>
+      </div>
+
+      <div class="callout tip"><div class="h">There's a UI sketch, too</div><p>A clickable mockup explores what a graphical <em>Workflow view</em> inside Fontra could look like. <a href="../workflow/ui-mockup.html">Open the mockup →</a></p></div>
+    </article>
+
+    <nav class="toc">
+      <div class="lbl">On this page</div>
+      <a href="#hello">A first pipeline</a>
+      <a href="#recipes">Recipes</a>
+      <a href="#concepts">How it works</a>
+      <a href="#reference">Action reference</a>
+    </nav>
+  </div>
+  </div>
+</div>
+<div class="scrim"></div>
+<script src="assets/app.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

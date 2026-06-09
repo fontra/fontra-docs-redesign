@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='73' font-size='64' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800'>F</text></svg>">
+<title>Migrate · Fontra Docs</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-active="migrate" data-top="">
+<div id="chrome-top"></div>
+<div class="layout">
+  <aside id="chrome-side"></aside>
+  <div class="content">
+  <div class="page">
+    <article class="article">
+      <div class="breadcrumb"><a href="index.html">Docs</a> › Migrate</div>
+      <h1>Coming from another editor</h1>
+      <p class="lede">You already know how to make fonts. These pages map your existing vocabulary onto Fontra — and show you how to try it <strong>without leaving the tool you use today</strong>.</p>
+
+      <div class="cardgrid">
+        <a class="card" href="#"><span class="ic">🅖</span><div class="t">Fontra for Glyphs users</div><div class="d">Masters → sources, brace layers → glyph sources, smart components → variable components. Plus shortcuts and honest gaps.</div></a>
+        <a class="card" href="#"><span class="ic">🤖</span><div class="t">Fontra for RoboFont users</div><div class="d">Same UFO + designspace blood. Precision auto-reload, and what scripting users will miss today.</div></a>
+      </div>
+
+      <h2 id="zero-risk">The zero-risk way to try Fontra</h2>
+      <p>You don't have to commit to anything. Fontra reads your native files and <strong>reloads automatically when they change on disk</strong>:</p>
+      <ol class="steps">
+        <li>Drop your <code>.glyphs</code>, <code>.designspace</code> or <code>.ufo</code> onto Fontra Pak.</li>
+        <li>Keep working in your usual editor. Save.</li>
+        <li>Watch Fontra update, live — a synchronized second view.</li>
+      </ol>
+      <div class="callout tip"><div class="h">Why this matters</div><p>You can evaluate Fontra on a real project, on a second monitor, with no conversion and no risk. Keep your current tool as the source of truth until you're convinced.</p></div>
+
+      <h2 id="map">What maps to what</h2>
+      <table>
+        <thead><tr><th>You might call it…</th><th>In Fontra</th></tr></thead>
+        <tbody>
+          <tr><td>Master / UFO source</td><td>Font source</td></tr>
+          <tr><td>Instance</td><td>Axis value labels (instances synthesized on export)</td></tr>
+          <tr><td>Brace layer / intermediate master</td><td>Glyph-level source</td></tr>
+          <tr><td>Smart / corner components</td><td>Variable components (smart only)</td></tr>
+          <tr><td>Mark colors</td><td>Status colors / development status</td></tr>
+          <tr><td>Test install</td><td>Export as → install (today)</td></tr>
+          <tr><td>Scripting (Python / fontParts)</td><td>Workflow today; in-app scripting on the roadmap</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">The per-editor pages go into full detail, including keyboard shortcuts and exactly what's missing today.</p>
+    </article>
+
+    <nav class="toc">
+      <div class="lbl">On this page</div>
+      <a href="#zero-risk">Zero-risk trial</a>
+      <a href="#map">What maps to what</a>
+    </nav>
+  </div>
+  </div>
+</div>
+<div class="scrim"></div>
+<script src="assets/app.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

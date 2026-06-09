@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='73' font-size='64' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800'>F</text></svg>">
+<title>About this redesign · Fontra Docs</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-active="" data-top="">
+<div id="chrome-top"></div>
+<div class="layout">
+  <aside id="chrome-side"></aside>
+  <div class="content">
+  <div class="page">
+    <article class="article">
+      <div class="breadcrumb"><a href="index.html">Docs</a> › About this redesign</div>
+      <h1>About this redesign</h1>
+      <p class="lede">This prototype proposes an update to <a href="https://docs.fontra.xyz" target="_blank" rel="noopener">docs.fontra.xyz</a> in two dimensions: <strong>shape</strong> (information architecture and visual design) and <strong>content</strong> (what's written, and what's missing). It's a draft for discussion, not a finished site.</p>
+
+      <div class="callout note"><div class="h">What stays the same</div><p>The current docs already use the <a href="https://diataxis.fr" target="_blank" rel="noopener">Diátaxis</a> system (tutorials / how-tos / reference / explanations), are open-source and CC&nbsp;BY. That foundation is sound. This redesign keeps Diátaxis and improves the layer on top of it.</p></div>
+
+      <h2 id="shape">Shape — what changed in the structure</h2>
+      <ol>
+        <li><strong>A real landing page with three doors.</strong> Instead of a single generic entry, the home routes the three audiences that actually arrive: beginners, migrants from other editors, and people building/automating. One door each.</li>
+        <li><strong>Persistent sidebar + on-this-page TOC.</strong> The whole map is visible at all times; long pages get a scroll-spying table of contents. You always know where you are.</li>
+        <li><strong>Diátaxis, relabeled for humans.</strong> "Learn / Guides / Reference / Concepts" reads more plainly than "Tutorials / How-Tos / Reference / Explanations" while keeping the same discipline behind the scenes.</li>
+        <li><strong>Two new top-level sections:</strong> <a href="workflow.html">Workflow</a> (the CLI pipeline, currently undocumented) and <a href="migrate.html">Migrate</a> (Rosetta-stone pages). Both serve audiences the current site doesn't.</li>
+        <li><strong>Video-first pages.</strong> The project already produces great short clips; here every how-to and tutorial <em>opens</em> with one rather than burying the links at the bottom.</li>
+        <li><strong>Search.</strong> A client-side index (Pagefind/Lunr) — no server, works on GitHub Pages. (Mocked here; press <kbd>⌘K</kbd>.)</li>
+        <li><strong>Light/dark, responsive, accessible.</strong> Theme toggle, mobile drawer nav, keyboard-navigable, system-font stack for speed.</li>
+      </ol>
+
+      <h2 id="content">Content — what changed in the writing</h2>
+      <ol>
+        <li><strong>A true zero-to-font tutorial.</strong> The current Quickstart assumes you already have a UFO. <a href="tutorial-first-font.html">Your first variable font</a> starts from nothing and ends with an installed font in 30 minutes — the single highest-impact page for new users.</li>
+        <li><strong>Migration pages.</strong> Glyphs and RoboFont users need a vocabulary map and a "try it without leaving your tool" path. Churn happens on session two, from habit friction; these pages remove it.</li>
+        <li><strong>The Workflow cookbook.</strong> Recipes first, generated reference second — because people adopt CLI tools by modifying examples.</li>
+        <li><strong>A few new concept pages</strong> (interpolation &amp; compatibility, how Fontra is built, shaping) to give reference pages somewhere to link "why" without bloating.</li>
+      </ol>
+
+      <h2 id="generated">Generated reference (proposal)</h2>
+      <p>Fontra's Workflow actions are Python dataclasses; their arguments, types and defaults are already machine-readable. The same is true of the menus and panels to a large extent. A build step could <strong>generate</strong> the most mechanical reference tables from source, so they never drift out of date — and double as autocomplete data for YAML editing. The hand-written prose explains; the generated tables enumerate.</p>
+
+      <h2 id="build">How it would be built</h2>
+      <p>Keep it boring and contributor-friendly: a static-site generator (the current site uses Jekyll; 11ty or Astro are also fine), Markdown content, a components layer for the callouts/video/step patterns shown here, Pagefind for search, and GitHub Pages for hosting — exactly the current deployment model. Nothing here requires a server or a framework rewrite.</p>
+
+      <div class="callout warn"><div class="h">⚠ Prototype caveats</div><p>Links marked <span class="planned" style="position:static">planned</span> or pointing to <code>#</code> are illustrative stubs. Screenshots are represented by striped <em>🎬 video</em> placeholders. Copy is drafted and would need a review pass against the current app before publishing.</p></div>
+
+      <h2 id="explore">Explore the prototype</h2>
+      <div class="cardgrid">
+        <a class="card" href="index.html"><div class="t">Home</div><div class="d">The three-door landing page.</div></a>
+        <a class="card" href="tutorial-first-font.html"><div class="t">Tutorial template</div><div class="d">Video blocks, steps, checkpoints, TOC.</div></a>
+        <a class="card" href="reference-axes.html"><div class="t">Reference template</div><div class="d">Tables, on-this-page nav, see-also.</div></a>
+        <a class="card" href="workflow.html"><div class="t">Workflow section</div><div class="d">The new CLI home.</div></a>
+        <a class="card" href="migrate.html"><div class="t">Migrate section</div><div class="d">The new migrant door.</div></a>
+      </div>
+      <p class="muted">Try the theme toggle (◐, top right) and shrink the window to see the responsive nav.</p>
+    </article>
+
+    <nav class="toc">
+      <div class="lbl">On this page</div>
+      <a href="#shape">Shape</a>
+      <a href="#content">Content</a>
+      <a href="#generated">Generated reference</a>
+      <a href="#build">How it would be built</a>
+      <a href="#explore">Explore</a>
+    </nav>
+  </div>
+  </div>
+</div>
+<div class="scrim"></div>
+<script src="assets/app.js"></script>
+<script src="assets/nav.js"></script>
+</body>
+</html>

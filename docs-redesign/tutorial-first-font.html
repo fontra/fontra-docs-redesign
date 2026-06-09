@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Make your first variable font in Fontra in under 30 minutes — no drawing skills required.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='73' font-size='64' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800'>F</text></svg>">
+<title>Your first variable font · Fontra Docs</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <button class="iconbtn menuToggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+  <a class="brand" href="index.html"><span class="mark">F</span> Fontra Docs <span class="tag">redesign</span></a>
+  <nav class="topnav">
+    <a href="get-started.html" class="on">Get started</a>
+    <a href="learn.html">Learn</a>
+    <a href="guides.html">Guides</a>
+    <a href="reference.html">Reference</a>
+    <a href="workflow.html">Workflow</a>
+  </nav>
+  <div class="spacer"></div>
+  <div class="searchbox" onclick="mockSearch()"><span>🔍</span> Search docs <span class="k">⌘K</span></div>
+  <button class="iconbtn" onclick="toggleTheme()" aria-label="Theme">◐</button>
+  <a class="iconbtn" href="https://github.com/fontra/fontra" title="GitHub" target="_blank" rel="noopener">↗</a>
+</div>
+
+<div class="layout">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="navgroup">
+      <div class="lbl"><span class="ic">🌱</span> Get started</div>
+      <nav class="nav">
+        <a href="get-started.html">Overview</a>
+        <a href="#" >Install Fontra Pak</a>
+        <a href="tutorial-first-font.html" class="on">Your first variable font</a>
+        <a href="#">Open an existing font</a>
+      </nav>
+    </div>
+    <div class="navgroup">
+      <div class="lbl"><span class="ic">📚</span> Learn</div>
+      <nav class="nav">
+        <a href="learn.html">All tutorials</a>
+        <a href="#">Drawing with the pen tool</a>
+        <a href="#">Editing across sources</a>
+        <a href="#">Variable components</a>
+      </nav>
+    </div>
+    <div class="navgroup">
+      <div class="lbl"><span class="ic">🛠</span> Guides</div>
+      <nav class="nav">
+        <a href="guides.html">All guides</a>
+        <a href="#">Set up a designspace</a>
+        <a href="#">Kerning &amp; spacing</a>
+        <a href="#">Export &amp; install</a>
+      </nav>
+    </div>
+    <div class="navgroup">
+      <div class="lbl"><span class="ic">📖</span> Reference</div>
+      <nav class="nav">
+        <a href="reference.html">Overview</a>
+        <a href="#">Editor &amp; tools</a>
+        <a href="reference-axes.html">Font · Axes</a>
+        <a href="#">Keyboard shortcuts</a>
+      </nav>
+    </div>
+    <div class="navgroup">
+      <div class="lbl"><span class="ic">⚙️</span> Workflow</div>
+      <nav class="nav">
+        <a href="workflow.html">Recipes &amp; intro</a>
+        <a href="#">Action reference</a>
+      </nav>
+    </div>
+    <div class="navgroup">
+      <div class="lbl"><span class="ic">🔁</span> Migrate</div>
+      <nav class="nav">
+        <a href="migrate.html">Overview</a>
+        <a href="#">From Glyphs</a>
+        <a href="#">From RoboFont</a>
+      </nav>
+    </div>
+    <div class="navgroup">
+      <div class="lbl"><span class="ic">💡</span> Understand</div>
+      <nav class="nav">
+        <a href="explanations.html">All concepts</a>
+        <a href="#">Designspace</a>
+        <a href="#">Sources &amp; layers</a>
+        <a href="#">Variable components</a>
+      </nav>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <div class="content">
+  <div class="page">
+    <article class="article">
+      <div class="breadcrumb"><a href="index.html">Docs</a> › <a href="get-started.html">Get started</a> › Your first variable font</div>
+      <h1>Your first variable font</h1>
+      <p class="lede">Make a real, working variable font — two letters, a Weight axis, and a slider that morphs them from Regular to Black — and install it on your computer. No drawing skills needed.</p>
+
+      <div class="pill-row">
+        <span class="pill">⏱ ~30 minutes</span>
+        <span class="pill">🎚 Beginner</span>
+        <span class="pill">macOS · Windows · Linux</span>
+      </div>
+
+      <div class="callout note">
+        <div class="h">What you'll end up with</div>
+        <p>A <code>.ttf</code> variable font with a working Weight axis and two named styles, installed and usable in any app on your computer.</p>
+      </div>
+
+      <h2 id="install">1. Install &amp; create a font</h2>
+      <div class="video"><div class="play">▶</div><div class="cap">🎬 download → New font → browser opens</div></div>
+      <ol class="steps">
+        <li><div class="st-h">Download Fontra Pak</div> Grab it from <a href="https://fontra.xyz">fontra.xyz</a> and install it.</li>
+        <li><div class="st-h">Launch it and click <em>New font</em></div> Name it <code>Hello</code>, pick the <code>.fontra</code> format, choose where to save.</li>
+        <li><div class="st-h">Your browser opens</div> This <em>is</em> Fontra — running in your browser, but everything stays on your computer. No internet needed, nothing uploaded.</li>
+      </ol>
+      <div class="callout tip"><div class="h">✓ Checkpoint</div><p>A browser tab named after your font, showing an empty glyph overview.</p></div>
+
+      <h2 id="first-glyph">2. Create your first glyph</h2>
+      <p>We'll start with <strong>H</strong> — the friendliest letter in type design.</p>
+      <ol class="steps">
+        <li>Open the <strong>editor view</strong> and the <strong>Preview text</strong> panel; type <code>H</code>.</li>
+        <li>The canvas shows a grey, empty placeholder. <strong>Double-click it</strong> and confirm <strong>Create</strong>. Fontra assigns the right Unicode for you.</li>
+      </ol>
+
+      <h2 id="draw">3. Draw H and o — no Bézier required</h2>
+      <div class="video"><div class="play">▶</div><div class="cap">🎬 three rectangles → H · two ellipses → o</div></div>
+      <h3 id="the-h">The H — three rectangles</h3>
+      <p>Pick the <strong>Shape tool</strong> (rectangle), and use the Selection info panel to type exact values:</p>
+      <table>
+        <thead><tr><th>Part</th><th>x</th><th>y</th><th>width</th><th>height</th></tr></thead>
+        <tbody>
+          <tr><td>Left stem</td><td>60</td><td>0</td><td>110</td><td>700</td></tr>
+          <tr><td>Right stem</td><td>430</td><td>0</td><td>110</td><td>700</td></tr>
+          <tr><td>Crossbar</td><td>60</td><td>300</td><td>480</td><td>100</td></tr>
+        </tbody>
+      </table>
+      <p>Select all (<kbd>⌘</kbd><kbd>A</kbd>) and apply <strong>Remove overlap</strong> so the three boxes fuse into one H. Set the advance width to <code>600</code>.</p>
+      <h3 id="the-o">The o — two ellipses</h3>
+      <p>Add <code>o</code> in Preview text and create it. With the Shape tool in <strong>ellipse</strong> mode, draw an outer oval (x 40, y −10, w 420, h 520 — the overshoot below the baseline is intentional) and an inner oval (x 140, y 90, w 220, h 320). Select both and <strong>Subtract</strong> to punch the counter. Advance width <code>500</code>.</p>
+      <div class="callout tip"><div class="h">✓ Checkpoint</div><p>Typing <code>HoHoHo</code> in Preview text shows your two letters spelling like a font.</p></div>
+
+      <h2 id="axis">4. Add a Weight axis</h2>
+      <div class="video"><div class="play">▶</div><div class="cap">🎬 Axes dialog: New axis</div></div>
+      <p>Open <strong>Font → Axes → New axis…</strong> and fill in:</p>
+      <table>
+        <tbody>
+          <tr><th>Name / UI Name</th><td>Weight</td></tr>
+          <tr><th>OT tag</th><td><code>wght</code></td></tr>
+          <tr><th>Min / Default / Max</th><td>400 / 400 / 900</td></tr>
+        </tbody>
+      </table>
+      <p>Under <strong>Axis values</strong>, add two labels: <code>Regular</code> = 400 and <code>Black</code> = 900. The export turns these into the font's named instances automatically.</p>
+      <div class="callout note"><div class="h">Why 400–900, not 100–900?</div><p>An axis range should only span where you have actual designs. You'll draw a Black today; you won't draw a Thin. Extend the range the day you do.</p></div>
+
+      <h2 id="black">5. Draw the Black</h2>
+      <div class="video"><div class="play">▶</div><div class="cap">🎬 virtual source → fatten stems</div></div>
+      <ol class="steps">
+        <li><strong>Font → Sources → New source…</strong>: name <code>Black</code>, location Weight = 900.</li>
+        <li>In the Designspace panel, the <code>Black</code> source shows <strong>in grey</strong> — a <em>virtual</em> source. <strong>Double-click it</strong> to copy your current drawing there.</li>
+        <li>With the slider at 900, drag the <em>inner</em> stem edges outward to fatten the H. Repeat for the o.</li>
+      </ol>
+      <div class="callout warn">
+        <div class="h">⚠ One rule makes interpolation work</div>
+        <p>Every source must have the <strong>same contours, same order, same number of points</strong>. That's why we <em>copied</em> the Regular and pushed its points around. If sources diverge, Fontra shows a <strong>bug icon</strong> next to the source.</p>
+      </div>
+
+      <h2 id="magic">6. The magic</h2>
+      <div class="video"><div class="play">▶</div><div class="cap">🎬 the slider gliding, letters breathing</div></div>
+      <p>Type <code>HoHoHo</code> and drag the Weight slider slowly from 400 to 900. Your letters <em>glide</em> through every weight in between. Stop at 547 — that weight exists now, and nobody drew it. This is what <strong>variable-first</strong> means: you never configured interpolation, you never left it.</p>
+
+      <h2 id="export">7. Export and install</h2>
+      <div class="video"><div class="play">▶</div><div class="cap">🎬 Export as → TTF → installed</div></div>
+      <ol class="steps">
+        <li><strong>File → Export as…</strong> → <strong>TrueType (.ttf)</strong> → save.</li>
+        <li>Install it (double-click → Install Font).</li>
+        <li>Open any app with a variable-font slider, or drop the file on <a href="https://wakamaifondue.com" target="_blank" rel="noopener">wakamaifondue.com</a>. Type <code>HoHoHo</code>. Try every weight.</li>
+      </ol>
+      <div class="callout tip"><div class="h">🎉 You made a variable font in half an hour.</div><p>Real, installable, with a working axis and two named styles.</p></div>
+
+      <hr>
+      <h2 id="next">Where to go next</h2>
+      <div class="cardgrid">
+        <a class="card" href="#"><div class="t">Drawing with the pen tool</div><div class="d">Real Bézier outlines, in all weights at once.</div></a>
+        <a class="card" href="#"><div class="t">Variable components</div><div class="d">The clever stuff Fontra was built for.</div></a>
+        <a class="card" href="reference-axes.html"><div class="t">Axes reference</div><div class="d">Mappings, discrete axes, value labels.</div></a>
+      </div>
+
+      <div class="callout note"><div class="h">Stuck?</div><p>The <a href="https://discord.gg/SeZWugEYzd" target="_blank" rel="noopener">Fontra Discord</a> is friendly to beginners — this tutorial was written imagining you there.</p></div>
+
+      <div class="pager">
+        <a class="prev" href="get-started.html"><div class="dir">← Previous</div><div class="ttl">Get started</div></a>
+        <a class="next" href="learn.html"><div class="dir">Next →</div><div class="ttl">Drawing with the pen tool</div></a>
+      </div>
+      <div class="editline">🎬 = a 10–20 s screen recording goes here · <a href="#">Improve this page on GitHub</a> · Last updated 2026-06</div>
+    </article>
+
+    <!-- ON THIS PAGE -->
+    <nav class="toc">
+      <div class="lbl">On this page</div>
+      <a href="#install">1. Install &amp; create</a>
+      <a href="#first-glyph">2. First glyph</a>
+      <a href="#draw">3. Draw H and o</a>
+      <a href="#the-h" class="lvl3">The H</a>
+      <a href="#the-o" class="lvl3">The o</a>
+      <a href="#axis">4. Weight axis</a>
+      <a href="#black">5. Draw the Black</a>
+      <a href="#magic">6. The magic</a>
+      <a href="#export">7. Export &amp; install</a>
+      <a href="#next">Where to go next</a>
+    </nav>
+  </div>
+  </div>
+</div>
+
+<div class="scrim"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>

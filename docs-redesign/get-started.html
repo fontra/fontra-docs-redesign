@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='73' font-size='64' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800'>F</text></svg>">
+<title>Get started · Fontra Docs</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="topbar">
+  <button class="iconbtn menuToggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+  <a class="brand" href="index.html"><span class="mark">F</span> Fontra Docs <span class="tag">redesign</span></a>
+  <nav class="topnav">
+    <a href="get-started.html" class="on">Get started</a>
+    <a href="learn.html">Learn</a><a href="guides.html">Guides</a>
+    <a href="reference.html">Reference</a><a href="workflow.html">Workflow</a>
+  </nav>
+  <div class="spacer"></div>
+  <div class="searchbox" onclick="mockSearch()"><span>🔍</span> Search docs <span class="k">⌘K</span></div>
+  <button class="iconbtn" onclick="toggleTheme()">◐</button>
+  <a class="iconbtn" href="https://github.com/fontra/fontra" target="_blank" rel="noopener">↗</a>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="navgroup"><div class="lbl"><span class="ic">🌱</span> Get started</div><nav class="nav">
+      <a href="get-started.html" class="on">Overview</a>
+      <a href="#">Install Fontra Pak</a>
+      <a href="tutorial-first-font.html">Your first variable font</a>
+      <a href="#">Open an existing font</a>
+      <a href="#">Try Fontra online <span class="planned">planned</span></a>
+    </nav></div>
+    <div class="navgroup"><div class="lbl"><span class="ic">📚</span> Learn</div><nav class="nav">
+      <a href="learn.html">All tutorials</a><a href="#">Pen tool</a><a href="#">Editing across sources</a><a href="#">Variable components</a>
+    </nav></div>
+    <div class="navgroup"><div class="lbl"><span class="ic">🛠</span> Guides</div><nav class="nav">
+      <a href="guides.html">All guides</a><a href="#">Set up a designspace</a><a href="#">Kerning &amp; spacing</a><a href="#">Export &amp; install</a>
+    </nav></div>
+    <div class="navgroup"><div class="lbl"><span class="ic">📖</span> Reference</div><nav class="nav">
+      <a href="reference.html">Overview</a><a href="#">Editor &amp; tools</a><a href="reference-axes.html">Font · Axes</a><a href="#">Keyboard shortcuts</a>
+    </nav></div>
+    <div class="navgroup"><div class="lbl"><span class="ic">⚙️</span> Workflow</div><nav class="nav">
+      <a href="workflow.html">Recipes &amp; intro</a><a href="#">Action reference</a>
+    </nav></div>
+    <div class="navgroup"><div class="lbl"><span class="ic">🔁</span> Migrate</div><nav class="nav">
+      <a href="migrate.html">Overview</a><a href="#">From Glyphs</a><a href="#">From RoboFont</a>
+    </nav></div>
+    <div class="navgroup"><div class="lbl"><span class="ic">💡</span> Understand</div><nav class="nav">
+      <a href="explanations.html">All concepts</a><a href="#">Designspace</a><a href="#">Sources &amp; layers</a><a href="#">Variable components</a>
+    </nav></div>
+  </aside>
+
+  <div class="content">
+  <div class="page no-toc">
+    <article class="article">
+      <div class="breadcrumb"><a href="index.html">Docs</a> › Get started</div>
+      <h1>Get started</h1>
+      <p class="lede">Everything you need to go from "what is Fontra?" to a font you made yourself. Pick where you're starting from.</p>
+
+      <div class="cardgrid">
+        <a class="card" href="#"><span class="ic">⬇️</span><div class="t">Install Fontra Pak</div><div class="d">The desktop app for macOS, Windows and Linux. Edit local files in your browser.</div><div class="meta">5 min</div></a>
+        <a class="card" href="tutorial-first-font.html"><span class="ic">🌱</span><div class="t">Your first variable font</div><div class="d">The hands-on tutorial: draw, add an axis, export. No experience needed.</div><div class="meta">Tutorial · 30 min · 🎬</div></a>
+        <a class="card" href="#"><span class="ic">📂</span><div class="t">Open an existing font</div><div class="d">Drop a UFO, designspace, .glyphs, TTF or OTF onto Fontra and start editing.</div><div class="meta">2 min</div></a>
+      </div>
+
+      <h2 id="what">What is Fontra, in one minute</h2>
+      <p>Fontra is a font editor with two parts: a <strong>client</strong> that runs in your web browser, and a <strong>server</strong> that runs on your own machine (via Fontra Pak) or on a remote host. The browser is just the interface — your files stay with you, and you can work fully offline. Put the server on a network and several people can edit the same font in real time.</p>
+      <p>It is <strong>variable-first</strong>: multiple masters, live interpolation, and variable components are foundations, not add-ons. If you've only ever made static fonts, the <a href="tutorial-first-font.html">first-font tutorial</a> is the fastest way to feel the difference.</p>
+
+      <div class="callout tip"><div class="h">Coming from another editor?</div><p>If you already use Glyphs or RoboFont, start with the <a href="migrate.html">migration guides</a> instead — they map your existing vocabulary onto Fontra and show you how to try it <em>without leaving your current tool</em>.</p></div>
+
+      <div class="pager">
+        <a class="prev" href="index.html"><div class="dir">← Home</div><div class="ttl">Fontra Docs</div></a>
+        <a class="next" href="tutorial-first-font.html"><div class="dir">Next →</div><div class="ttl">Your first variable font</div></a>
+      </div>
+    </article>
+  </div>
+  </div>
+</div>
+<div class="scrim"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>

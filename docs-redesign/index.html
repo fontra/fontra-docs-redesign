@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Fontra documentation — redesign prototype. Learn, do, look up and understand the browser-based variable-first font editor.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='73' font-size='64' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800'>F</text></svg>">
+<title>Fontra Docs — redesign prototype</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <button class="iconbtn menuToggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+  <a class="brand" href="index.html"><span class="mark">F</span> Fontra Docs <span class="tag">redesign</span></a>
+  <nav class="topnav">
+    <a href="get-started.html">Get started</a>
+    <a href="learn.html">Learn</a>
+    <a href="guides.html">Guides</a>
+    <a href="reference.html">Reference</a>
+    <a href="workflow.html">Workflow</a>
+  </nav>
+  <div class="spacer"></div>
+  <div class="searchbox" onclick="mockSearch()"><span>🔍</span> Search docs <span class="k">⌘K</span></div>
+  <button class="iconbtn" onclick="toggleTheme()" aria-label="Theme">◐</button>
+  <a class="iconbtn" href="https://github.com/fontra/fontra" title="GitHub" target="_blank" rel="noopener">↗</a>
+</div>
+
+<div class="homewrap">
+
+  <section class="hero">
+    <h1>Design variable fonts in your browser.</h1>
+    <p>Fontra is an open-source, cross-platform, <strong>variable-first</strong> font editor. Run it locally, or on a server for real-time collaboration.</p>
+    <div>
+      <a class="cta" href="get-started.html">Make your first font →</a>
+      <a class="cta ghost" href="about-redesign.html">About this redesign</a>
+    </div>
+    <div class="pill-row" style="justify-content:center; margin-top:26px;">
+      <span class="pill">macOS · Windows · Linux</span>
+      <span class="pill">Free &amp; open source</span>
+      <span class="pill">UFO · designspace · .glyphs · TTF/OTF</span>
+    </div>
+  </section>
+
+  <!-- three doors -->
+  <div class="doorgrid">
+    <a class="door" href="get-started.html">
+      <span class="ic">🌱</span>
+      <h3>New to type design</h3>
+      <p>Never opened a font editor? Build a working variable font in under 30 minutes.</p>
+      <span class="go">Start the tutorial →</span>
+    </a>
+    <a class="door" href="migrate.html">
+      <span class="ic">🔁</span>
+      <h3>Coming from another editor</h3>
+      <p>Use Glyphs or RoboFont? Map what you know onto Fontra — and try it without leaving your tool.</p>
+      <span class="go">Migration guides →</span>
+    </a>
+    <a class="door" href="workflow.html">
+      <span class="ic">⚙️</span>
+      <h3>Building &amp; automating</h3>
+      <p>Production pipelines, subsetting, instancing, compiling — declaratively, from the command line.</p>
+      <span class="go">Fontra Workflow →</span>
+    </a>
+  </div>
+
+  <h2>Browse the docs</h2>
+  <div class="cardgrid">
+    <a class="card" href="learn.html">
+      <span class="ic">📚</span><div class="t">Learn</div>
+      <div class="d">Tutorials that take you by the hand, from zero to a finished font.</div>
+    </a>
+    <a class="card" href="guides.html">
+      <span class="ic">🛠</span><div class="t">Guides</div>
+      <div class="d">Task-focused how-tos: solve one specific problem, fast.</div>
+    </a>
+    <a class="card" href="reference.html">
+      <span class="ic">📖</span><div class="t">Reference</div>
+      <div class="d">Every menu, panel, tool and shortcut, described precisely.</div>
+    </a>
+    <a class="card" href="explanations.html">
+      <span class="ic">💡</span><div class="t">Concepts</div>
+      <div class="d">The ideas behind Fontra: designspace, sources, variable components.</div>
+    </a>
+    <a class="card" href="workflow.html">
+      <span class="ic">⚙️</span><div class="t">Workflow</div>
+      <div class="d">The command-line pipeline engine, with a copy-paste recipe book.</div>
+    </a>
+    <a class="card" href="migrate.html">
+      <span class="ic">🔁</span><div class="t">Migrate</div>
+      <div class="d">Rosetta-stone pages for Glyphs and RoboFont users.</div>
+    </a>
+  </div>
+
+  <h2>Popular right now</h2>
+  <div class="cardgrid">
+    <a class="card" href="tutorial-first-font.html">
+      <div class="t">Your first variable font</div>
+      <div class="d">Download → draw → add a Weight axis → export. 30 minutes.</div>
+      <div class="meta">Tutorial · 🎬 video</div>
+    </a>
+    <a class="card" href="reference-axes.html">
+      <div class="t">Axes</div>
+      <div class="d">Set up the variation axes of your designspace.</div>
+      <div class="meta">Reference</div>
+    </a>
+    <a class="card" href="workflow.html">
+      <div class="t">Subset a font for the web</div>
+      <div class="d">A ready-to-run Workflow recipe.</div>
+      <div class="meta">Workflow · recipe</div>
+    </a>
+  </div>
+
+  <p class="center muted" style="margin-top:60px; font-size:13px;">
+    This is a <strong>redesign prototype</strong>, not the live site. <a href="about-redesign.html">What changed and why →</a>
+  </p>
+</div>
+
+<div class="scrim"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>
