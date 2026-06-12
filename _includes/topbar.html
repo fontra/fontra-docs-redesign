@@ -1,0 +1,13 @@
+<div class="topbar">
+  <button class="iconbtn menuToggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+  <a class="brand" href="index.html"><span class="mark">F</span> Fontra Docs <span class="tag">redesign</span></a>
+  <nav class="topnav">
+    {%- for item in nav.topnav %}
+    <a href="{{ item.href }}"{% if item.id == top %} class="on"{% endif %}>{{ item.label }}</a>
+    {%- endfor %}
+  </nav>
+  <div class="spacer"></div>
+  <div class="searchbox" onclick="mockSearch()"><span>🔍</span> Search docs <span class="k">⌘K</span></div>
+  <button class="iconbtn" onclick="toggleTheme()" aria-label="Theme">◐</button>
+  <a class="iconbtn" href="https://github.com/fontra/fontra" title="GitHub" target="_blank" rel="noopener">↗</a>
+</div>

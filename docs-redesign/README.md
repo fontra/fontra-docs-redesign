@@ -2,7 +2,16 @@
 
 A navigable, static prototype proposing an update to [docs.fontra.xyz](https://docs.fontra.xyz) in both **shape** (information architecture + visual design) and **content** (what's written, and what's missing).
 
-**Start here:** open [`index.html`](index.html) in a browser. Everything is plain HTML/CSS/JS — no build step, works from `file://` or GitHub Pages.
+**Start here:** run `npm install && npm start` at the repo root and open
+`http://localhost:8080/docs-redesign/`. The prototype is built with
+[Eleventy (11ty)](https://www.11ty.dev/) — the same toolchain as fontra-blog
+and the proposed fontra-docs migration — so its templates and content
+conventions can graduate into the real docs site without a rewrite.
+
+Each page is an `.html` template with YAML front matter (`title`,
+`top`/`active` for the highlighted nav entries); the shared chrome is
+rendered at build time from `_data/nav.js` through `_includes/` and
+`_layouts/` at the repo root.
 
 ## What's in the prototype
 
@@ -21,7 +30,7 @@ A navigable, static prototype proposing an update to [docs.fontra.xyz](https://d
 
 - `assets/style.css` — themeable via CSS variables, light + dark, responsive.
 - `assets/app.js` — theme toggle, mobile nav, mock search (⌘K), heading anchors, scroll-spy TOC.
-- `assets/nav.js` — injects the shared topbar + sidebar so hub pages stay DRY (a page declares `data-active` / `data-top` and drops in `#chrome-top` / `#chrome-side`). The three richest pages (`index`, `get-started`, `tutorial-first-font`) hardcode their chrome instead, as worked examples.
+- `../_data/nav.js` + `../_includes/topbar.html` / `sidebar.html` + `../_layouts/` — the shared topbar + sidebar, rendered at build time. A page selects its highlighted entries with `top:` / `active:` front matter. (This replaces the former client-side `assets/nav.js` injection; all pages now share the same chrome, including `index`, `get-started` and `tutorial-first-font`, which used to hardcode it.)
 
 ## Conventions
 

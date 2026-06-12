@@ -1,0 +1,17 @@
+{
+	"name": "fontra-docs-redesign",
+	"version": "1.0.0",
+	"description": "Redesign prototype for docs.fontra.xyz, built with Eleventy",
+	"type": "module",
+	"scripts": {
+		"build": "npx @11ty/eleventy",
+		"start": "npx @11ty/eleventy --serve --quiet"
+	},
+	"license": "MIT",
+	"engines": {
+		"node": ">=18"
+	},
+	"devDependencies": {
+		"@11ty/eleventy": "^3.0.0"
+	}
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "head.html" %}
+</head>
+<body>
+{% include "topbar.html" %}
+<div class="layout">
+  {% include "sidebar.html" %}
+  <div class="content">
+{{ content }}
+  </div>
+</div>
+<div class="scrim"></div>
+<script src="assets/app.js"></script>
+</body>
+</html>

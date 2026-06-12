@@ -26,8 +26,26 @@ This repo came out of a working session (June 2026) that started with one questi
 | [ux.md](workflow/ux.md) | Would Workflow need a UI? A layered answer: invisible fixes first, then a **Workflow view** inside Fontra — step stack, schema-generated inspectors, and a per-step font preview pin |
 | [ui-mockup.html](workflow/ui-mockup.html) | **Clickable mockup** of that Workflow view. Select steps, drag the Weight slider, move the preview pin, toggle the YAML drawer, hit Run. Static — no engine behind it |
 
-> 🖱 **Try the mockup:** open [`workflow/ui-mockup.html`](workflow/ui-mockup.html) in a browser, or (once GitHub Pages is enabled for this repo) visit
+> 🖱 **Try the mockup:** open [`workflow/ui-mockup.html`](workflow/ui-mockup.html) in a browser, or visit
 > `https://fontra.github.io/fontra-docs-redesign/workflow/ui-mockup.html`
+
+## Building the site
+
+The published site (the root hub, the docs-redesign prototype, and the Workflow
+mockup) is built with [Eleventy (11ty)](https://www.11ty.dev/) — the same
+generator as fontra-blog and the proposed fontra-docs migration:
+
+```
+npm install
+npm start        # live-reloading dev server
+npm run build    # production build in _site/
+```
+
+Pushes to `main` are deployed to GitHub Pages by
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
+(the repo's Pages settings must be set to "GitHub Actions").
+The written documents (`understanding/`, `workflow/*.md`, `strategy/`,
+`drafts/`) are repo documents, not site pages — read them on GitHub.
 
 ### `strategy/` — growing the user base
 

@@ -1,0 +1,9 @@
+<aside class="sidebar">
+  {%- for group in nav.side %}
+  <div class="navgroup"><div class="lbl"><span class="ic">{{ group.icon }}</span> {{ group.label }}</div><nav class="nav">
+    {%- for item in group.items %}
+    <a href="{{ item.href }}"{% if item.id == active %} class="on"{% endif %}>{{ item.label }}{% if item.tag %} <span class="planned">{{ item.tag }}</span>{% endif %}</a>
+    {%- endfor %}
+  </nav></div>
+  {%- endfor %}
+</aside>
