@@ -19,8 +19,8 @@ rendered at build time from `_data/nav.js` through `_includes/` and
 |---|---|
 | `index.html` | Home: three-audience "doors", featured cards, mock search |
 | `get-started.html` | Section hub template |
-| `tutorial-first-font.html` | **Tutorial page template** — video blocks, numbered steps, checkpoints, on-this-page TOC, prev/next |
-| `reference.html` · `reference-axes.html` | **Reference hub + page template** — tables, see-also, scroll-spy TOC |
+| `tutorial-first-font.md` | **Tutorial page template** (Markdown) — video blocks, numbered steps, checkpoints, on-this-page TOC, prev/next |
+| `reference.html` · `reference-axes.md` | **Reference hub + page template** (Markdown) — tables, see-also, scroll-spy TOC |
 | `learn.html` · `guides.html` · `explanations.html` | Hub templates for the Diátaxis quadrants |
 | `workflow.html` | Proposed new section for the Workflow CLI (currently undocumented) |
 | `migrate.html` | Proposed new section: Rosetta-stone pages for Glyphs/RoboFont users |
