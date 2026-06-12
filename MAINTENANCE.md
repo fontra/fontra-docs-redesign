@@ -85,9 +85,31 @@ Things to know:
   - callout: `<div class="callout note"><div class="h">Heading</div><p>Text.</p></div>`
     (also `callout tip`, `callout warn`)
   - video placeholder: `<div class="video"><div class="play">▶</div><div class="cap">🎬 description</div></div>`
-- The richly designed pages (home, hubs, the worked-example tutorial) are
-  `.html` templates instead of Markdown — same front matter, hand-written
-  body. Edit them like any other file; just mind the matching closing tags.
+- Long pages can show an **"On this page"** column: list the sections in the
+  front matter and give your headings matching ids (write those headings as
+  one-line HTML so the anchor ids stay stable):
+
+  ```yaml
+  toc:
+    - { id: add, label: "Adding an axis" }
+    - { id: continuous, label: "Continuous", lvl3: true }
+  ```
+
+  ```markdown
+  <h2 id="add">Adding an axis</h2>
+  ```
+
+  See `tutorial-first-font.md` or `reference-axes.md` for complete examples.
+
+### Why a few pages are still `.html`
+
+**All content pages are Markdown.** The remaining `.html` files are *design
+surfaces*: the home page and the section hubs (`index`, `get-started`,
+`learn`, `guides`, `reference`, `explanations`, `migrate`, `workflow`,
+`about-redesign`). They consist almost entirely of card grids and hero
+blocks — as Markdown they would be the same HTML with a different file
+extension. Editing them is design work; editing `.md` files is writing work.
+That's the dividing line.
 
 ## 4. Adding a brand-new page
 

@@ -1,8 +1,17 @@
 ---
 layout: docs.html
 ---
-<div class="page no-toc">
+<div class="page{% unless toc %} no-toc{% endunless %}">
   <article class="article">
 {{ content }}
   </article>
+{%- if toc %}
+  <!-- ON THIS PAGE -->
+  <nav class="toc">
+    <div class="lbl">On this page</div>
+    {%- for t in toc %}
+    <a href="#{{ t.id }}"{% if t.lvl3 %} class="lvl3"{% endif %}>{{ t.label }}</a>
+    {%- endfor %}
+  </nav>
+{%- endif %}
 </div>

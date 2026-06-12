@@ -1,0 +1,148 @@
+---
+title: "Your first variable font · Fontra Docs"
+description: "Make your first variable font in Fontra in under 30 minutes — no drawing skills required."
+layout: article.html
+top: get-started
+active: first-font
+toc:
+  - { id: install, label: "1. Install & create" }
+  - { id: first-glyph, label: "2. First glyph" }
+  - { id: draw, label: "3. Draw H and o" }
+  - { id: the-h, label: "The H", lvl3: true }
+  - { id: the-o, label: "The o", lvl3: true }
+  - { id: axis, label: "4. Weight axis" }
+  - { id: black, label: "5. Draw the Black" }
+  - { id: magic, label: "6. The magic" }
+  - { id: export, label: "7. Export & install" }
+  - { id: next, label: "Where to go next" }
+---
+
+<div class="breadcrumb"><a href="index.html">Docs</a> › <a href="get-started.html">Get started</a> › Your first variable font</div>
+
+# Your first variable font
+
+<p class="lede">Make a real, working variable font — two letters, a Weight axis, and a slider that morphs them from Regular to Black — and install it on your computer. No drawing skills needed.</p>
+
+<div class="pill-row">
+<span class="pill">⏱ ~30 minutes</span>
+<span class="pill">🎚 Beginner</span>
+<span class="pill">macOS · Windows · Linux</span>
+</div>
+
+<div class="callout note">
+<div class="h">What you'll end up with</div>
+<p>A <code>.ttf</code> variable font with a working Weight axis and two named styles, installed and usable in any app on your computer.</p>
+</div>
+
+<h2 id="install">1. Install &amp; create a font</h2>
+
+<div class="video"><div class="play">▶</div><div class="cap">🎬 download → New font → browser opens</div></div>
+
+<ol class="steps">
+<li><div class="st-h">Download Fontra Pak</div> Grab it from <a href="https://fontra.xyz">fontra.xyz</a> and install it.</li>
+<li><div class="st-h">Launch it and click <em>New font</em></div> Name it <code>Hello</code>, pick the <code>.fontra</code> format, choose where to save.</li>
+<li><div class="st-h">Your browser opens</div> This <em>is</em> Fontra — running in your browser, but everything stays on your computer. No internet needed, nothing uploaded.</li>
+</ol>
+
+<div class="callout tip"><div class="h">✓ Checkpoint</div><p>A browser tab named after your font, showing an empty glyph overview.</p></div>
+
+<h2 id="first-glyph">2. Create your first glyph</h2>
+
+We'll start with **H** — the friendliest letter in type design.
+
+<ol class="steps">
+<li>Open the <strong>editor view</strong> and the <strong>Preview text</strong> panel; type <code>H</code>.</li>
+<li>The canvas shows a grey, empty placeholder. <strong>Double-click it</strong> and confirm <strong>Create</strong>. Fontra assigns the right Unicode for you.</li>
+</ol>
+
+<h2 id="draw">3. Draw H and o — no Bézier required</h2>
+
+<div class="video"><div class="play">▶</div><div class="cap">🎬 three rectangles → H · two ellipses → o</div></div>
+
+<h3 id="the-h">The H — three rectangles</h3>
+
+Pick the **Shape tool** (rectangle), and use the Selection info panel to type exact values:
+
+| Part | x | y | width | height |
+|---|---|---|---|---|
+| Left stem | 60 | 0 | 110 | 700 |
+| Right stem | 430 | 0 | 110 | 700 |
+| Crossbar | 60 | 300 | 480 | 100 |
+
+Select all (<kbd>⌘</kbd><kbd>A</kbd>) and apply **Remove overlap** so the three boxes fuse into one H. Set the advance width to `600`.
+
+<h3 id="the-o">The o — two ellipses</h3>
+
+Add `o` in Preview text and create it. With the Shape tool in **ellipse** mode, draw an outer oval (x 40, y −10, w 420, h 520 — the overshoot below the baseline is intentional) and an inner oval (x 140, y 90, w 220, h 320). Select both and **Subtract** to punch the counter. Advance width `500`.
+
+<div class="callout tip"><div class="h">✓ Checkpoint</div><p>Typing <code>HoHoHo</code> in Preview text shows your two letters spelling like a font.</p></div>
+
+<h2 id="axis">4. Add a Weight axis</h2>
+
+<div class="video"><div class="play">▶</div><div class="cap">🎬 Axes dialog: New axis</div></div>
+
+Open **Font → Axes → New axis…** and fill in:
+
+<table>
+<tbody>
+<tr><th>Name / UI Name</th><td>Weight</td></tr>
+<tr><th>OT tag</th><td><code>wght</code></td></tr>
+<tr><th>Min / Default / Max</th><td>400 / 400 / 900</td></tr>
+</tbody>
+</table>
+
+Under **Axis values**, add two labels: `Regular` = 400 and `Black` = 900. The export turns these into the font's named instances automatically.
+
+<div class="callout note"><div class="h">Why 400–900, not 100–900?</div><p>An axis range should only span where you have actual designs. You'll draw a Black today; you won't draw a Thin. Extend the range the day you do.</p></div>
+
+<h2 id="black">5. Draw the Black</h2>
+
+<div class="video"><div class="play">▶</div><div class="cap">🎬 virtual source → fatten stems</div></div>
+
+<ol class="steps">
+<li><strong>Font → Sources → New source…</strong>: name <code>Black</code>, location Weight = 900.</li>
+<li>In the Designspace panel, the <code>Black</code> source shows <strong>in grey</strong> — a <em>virtual</em> source. <strong>Double-click it</strong> to copy your current drawing there.</li>
+<li>With the slider at 900, drag the <em>inner</em> stem edges outward to fatten the H. Repeat for the o.</li>
+</ol>
+
+<div class="callout warn">
+<div class="h">⚠ One rule makes interpolation work</div>
+<p>Every source must have the <strong>same contours, same order, same number of points</strong>. That's why we <em>copied</em> the Regular and pushed its points around. If sources diverge, Fontra shows a <strong>bug icon</strong> next to the source.</p>
+</div>
+
+<h2 id="magic">6. The magic</h2>
+
+<div class="video"><div class="play">▶</div><div class="cap">🎬 the slider gliding, letters breathing</div></div>
+
+Type `HoHoHo` and drag the Weight slider slowly from 400 to 900. Your letters *glide* through every weight in between. Stop at 547 — that weight exists now, and nobody drew it. This is what **variable-first** means: you never configured interpolation, you never left it.
+
+<h2 id="export">7. Export and install</h2>
+
+<div class="video"><div class="play">▶</div><div class="cap">🎬 Export as → TTF → installed</div></div>
+
+<ol class="steps">
+<li><strong>File → Export as…</strong> → <strong>TrueType (.ttf)</strong> → save.</li>
+<li>Install it (double-click → Install Font).</li>
+<li>Open any app with a variable-font slider, or drop the file on <a href="https://wakamaifondue.com" target="_blank" rel="noopener">wakamaifondue.com</a>. Type <code>HoHoHo</code>. Try every weight.</li>
+</ol>
+
+<div class="callout tip"><div class="h">🎉 You made a variable font in half an hour.</div><p>Real, installable, with a working axis and two named styles.</p></div>
+
+---
+
+<h2 id="next">Where to go next</h2>
+
+<div class="cardgrid">
+<a class="card" href="pen-tool.html"><div class="t">Drawing with the pen tool</div><div class="d">Real Bézier outlines, in all weights at once.</div></a>
+<a class="card" href="variable-components-tutorial.html"><div class="t">Variable components</div><div class="d">The clever stuff Fontra was built for.</div></a>
+<a class="card" href="reference-axes.html"><div class="t">Axes reference</div><div class="d">Mappings, discrete axes, value labels.</div></a>
+</div>
+
+<div class="callout note"><div class="h">Stuck?</div><p>The <a href="https://discord.gg/SeZWugEYzd" target="_blank" rel="noopener">Fontra Discord</a> is friendly to beginners — this tutorial was written imagining you there.</p></div>
+
+<div class="pager">
+<a class="prev" href="get-started.html"><div class="dir">← Previous</div><div class="ttl">Get started</div></a>
+<a class="next" href="learn.html"><div class="dir">Next →</div><div class="ttl">Drawing with the pen tool</div></a>
+</div>
+
+<div class="editline">🎬 = a 10–20 s screen recording goes here · <a href="#">Improve this page on GitHub</a> · Last updated 2026-06</div>
