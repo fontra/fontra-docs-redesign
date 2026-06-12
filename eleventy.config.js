@@ -10,8 +10,13 @@
 // runtime is now rendered at build time from _data/nav.js via the
 // templates in _includes/ and _layouts/.
 
+import { IdAttributePlugin } from "@11ty/eleventy";
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
+	// Heading ids in rendered Markdown, so app.js anchors + scroll-spy work
+	eleventyConfig.addPlugin(IdAttributePlugin);
+
 	eleventyConfig.addPassthroughCopy({
 		"./docs-redesign/assets/style.css": "/docs-redesign/assets/style.css",
 		"./docs-redesign/assets/app.js": "/docs-redesign/assets/app.js",
