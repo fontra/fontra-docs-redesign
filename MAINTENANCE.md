@@ -154,7 +154,7 @@ changes the URL, so update links pointing at it (`grep` for the old name).
 | `_data/nav.js` | sidebar/topbar change on **every** page |
 | `_includes/topbar.html`, `sidebar.html`, `head.html` | chrome changes on every page |
 | `_layouts/docs.html`, `article.html`, `home.html` | page skeletons change |
-| `docs-redesign/assets/style.css` | styling, copied as-is |
+| `docs-redesign/assets/style.css` | styling, copied as-is — see [RETHEMING.md](RETHEMING.md) |
 | `docs-redesign/assets/app.js` | client behavior (theme, mobile nav, ⌘K, scroll-spy) |
 | `eleventy.config.js` | build rules: what's a page, what's copied, what's ignored |
 | `.eleventyignore` | which files are repo-documents only, **not** site pages |
