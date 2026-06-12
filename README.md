@@ -67,4 +67,4 @@ Open an issue or PR — or pick any document and answer the *open questions* at 
 
 ## License
 
-Not yet specified. Suggestion: **CC BY 4.0** for the documents, to match docs.fontra.xyz and ease upstreaming.
+CC BY 4.0
