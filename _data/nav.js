@@ -17,10 +17,10 @@ export default {
 			label: "Get started",
 			items: [
 				{ href: "get-started.html", label: "Overview", id: "get-started" },
-				{ href: "#", label: "Install Fontra Pak", id: "install" },
+				{ href: "install.html", label: "Install Fontra Pak", id: "install" },
 				{ href: "tutorial-first-font.html", label: "Your first variable font", id: "first-font" },
-				{ href: "#", label: "Open an existing font", id: "open" },
-				{ href: "#", label: "Try Fontra online", id: "try", tag: "planned" },
+				{ href: "open-existing-font.html", label: "Open an existing font", id: "open" },
+				{ href: "try-online.html", label: "Try Fontra online", id: "try", tag: "planned" },
 			],
 		},
 		{
@@ -28,9 +28,9 @@ export default {
 			label: "Learn",
 			items: [
 				{ href: "learn.html", label: "All tutorials", id: "learn" },
-				{ href: "#", label: "Drawing with the pen tool", id: "pen" },
-				{ href: "#", label: "Editing across sources", id: "multisource" },
-				{ href: "#", label: "Variable components", id: "varcomp-t" },
+				{ href: "pen-tool.html", label: "Drawing with the pen tool", id: "pen" },
+				{ href: "editing-across-sources.html", label: "Editing across sources", id: "multisource" },
+				{ href: "variable-components-tutorial.html", label: "Variable components", id: "varcomp-t" },
 			],
 		},
 		{
@@ -38,9 +38,9 @@ export default {
 			label: "Guides",
 			items: [
 				{ href: "guides.html", label: "All guides", id: "guides" },
-				{ href: "#", label: "Set up a designspace", id: "designspace-g" },
-				{ href: "#", label: "Kerning & spacing", id: "kerning" },
-				{ href: "#", label: "Export & install", id: "export" },
+				{ href: "setup-designspace.html", label: "Set up a designspace", id: "designspace-g" },
+				{ href: "kerning-spacing.html", label: "Kerning & spacing", id: "kerning" },
+				{ href: "export-install.html", label: "Export & install", id: "export" },
 			],
 		},
 		{
@@ -48,10 +48,10 @@ export default {
 			label: "Reference",
 			items: [
 				{ href: "reference.html", label: "Overview", id: "reference" },
-				{ href: "#", label: "Editor & tools", id: "editor" },
+				{ href: "editor-tools.html", label: "Editor & tools", id: "editor" },
 				{ href: "reference-axes.html", label: "Font · Axes", id: "axes" },
-				{ href: "#", label: "Font · Sources", id: "sources-r" },
-				{ href: "#", label: "Keyboard shortcuts", id: "shortcuts" },
+				{ href: "font-sources.html", label: "Font · Sources", id: "sources-r" },
+				{ href: "keyboard-shortcuts.html", label: "Keyboard shortcuts", id: "shortcuts" },
 			],
 		},
 		{
@@ -59,8 +59,8 @@ export default {
 			label: "Workflow",
 			items: [
 				{ href: "workflow.html", label: "Recipes & intro", id: "workflow" },
-				{ href: "#", label: "Action reference", id: "actions" },
-				{ href: "#", label: "Writing your own actions", id: "extend" },
+				{ href: "action-reference.html", label: "Action reference", id: "actions" },
+				{ href: "writing-actions.html", label: "Writing your own actions", id: "extend" },
 			],
 		},
 		{
@@ -68,8 +68,8 @@ export default {
 			label: "Migrate",
 			items: [
 				{ href: "migrate.html", label: "Overview", id: "migrate" },
-				{ href: "#", label: "From Glyphs", id: "glyphs" },
-				{ href: "#", label: "From RoboFont", id: "robofont" },
+				{ href: "from-glyphs.html", label: "From Glyphs", id: "glyphs" },
+				{ href: "from-robofont.html", label: "From RoboFont", id: "robofont" },
 			],
 		},
 		{
@@ -77,9 +77,9 @@ export default {
 			label: "Understand",
 			items: [
 				{ href: "explanations.html", label: "All concepts", id: "explanations" },
-				{ href: "#", label: "Designspace", id: "designspace-e" },
-				{ href: "#", label: "Sources & layers", id: "sources-e" },
-				{ href: "#", label: "Variable components", id: "varcomp-e" },
+				{ href: "designspace.html", label: "Designspace", id: "designspace-e" },
+				{ href: "sources-layers.html", label: "Sources & layers", id: "sources-e" },
+				{ href: "variable-components.html", label: "Variable components", id: "varcomp-e" },
 			],
 		},
 	],
