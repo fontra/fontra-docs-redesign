@@ -1,4 +1,4 @@
-# Fontra Philosophy
+# Fontra docs redesign
 
 Notes, analysis, and draft deliverables about **[Fontra](https://fontra.xyz)** — the open-source, browser-based, variable-first font editor — and how to grow its user base.
 
