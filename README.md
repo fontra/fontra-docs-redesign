@@ -4,7 +4,7 @@ Notes, analysis, and draft deliverables about **[Fontra](https://fontra.xyz)** �
 
 This repo came out of a working session (June 2026) that started with one question — *what is Fontra's philosophy?* — and kept pulling the thread: how the Workflow engine works, what friendlier UX for it could look like, and which documentation would bring more users in. The analysis is grounded in Fontra's actual source code (claims were verified against [`fontra/fontra`](https://github.com/fontra/fontra) at commit `e86dc88` and `main`), its [docs](https://docs.fontra.xyz), [blog](https://blog.fontra.xyz), and the ATypI 2023 slides. Drafted with AI assistance, directed and reviewed by a human who knows where the bodies are buried.
 
-**Status: drafts for discussion.** Nothing here is official Fontra documentation. Every document ends with open questions inviting feedback.
+**Status: draft for internal discussion.** Nothing here is official Fontra documentation. Every document ends with open questions inviting feedback.
 
 ---
 
