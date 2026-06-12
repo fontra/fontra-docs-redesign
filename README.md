@@ -27,7 +27,7 @@ This repo came out of a working session (June 2026) that started with one questi
 | [ui-mockup.html](workflow/ui-mockup.html) | **Clickable mockup** of that Workflow view. Select steps, drag the Weight slider, move the preview pin, toggle the YAML drawer, hit Run. Static — no engine behind it |
 
 > 🖱 **Try the mockup:** open [`workflow/ui-mockup.html`](workflow/ui-mockup.html) in a browser, or (once GitHub Pages is enabled for this repo) visit
-> `https://uplus-type.github.io/FontraPhilosophy/workflow/ui-mockup.html`
+> `https://fontra.github.io/fontra-docs-redesign/workflow/ui-mockup.html`
 
 ### `strategy/` — growing the user base
 
