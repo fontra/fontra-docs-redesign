@@ -5,7 +5,59 @@
 </head>
 <body>
 {% include "topbar.html" %}
+<div class="homewrap">
+
+{%- if hero %}
+  <section class="hero">
+    <h1>{{ hero.heading }}</h1>
+    <p>{{ hero.text }}</p>
+    <div>
+      {%- for b in hero.buttons %}
+      <a class="cta{% if b.ghost %} ghost{% endif %}" href="{{ b.href }}">{{ b.label }}</a>
+      {%- endfor %}
+    </div>
+    <div class="pill-row" style="justify-content:center; margin-top:26px;">
+      {%- for p in hero.pills %}
+      <span class="pill">{{ p }}</span>
+      {%- endfor %}
+    </div>
+  </section>
+{%- endif %}
+
+{%- if doors %}
+  <div class="doorgrid">
+    {%- for d in doors %}
+    <a class="door" href="{{ d.href }}">
+      <span class="ic">{{ d.icon }}</span>
+      <h3>{{ d.title }}</h3>
+      <p>{{ d.text }}</p>
+      <span class="go">{{ d.go }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+{%- endif %}
+
+{%- for section in sections %}
+  <h2>{{ section.heading }}</h2>
+  <div class="cardgrid">
+    {%- for c in section.cards %}
+    <a class="card" href="{{ c.href }}">
+      {% if c.icon %}<span class="ic">{{ c.icon }}</span>{% endif %}<div class="t">{{ c.title }}</div>
+      <div class="d">{{ c.desc }}</div>
+      {%- if c.meta %}
+      <div class="meta">{{ c.meta }}</div>
+      {%- endif %}
+    </a>
+    {%- endfor %}
+  </div>
+{%- endfor %}
+
 {{ content }}
+
+{%- if footnote %}
+  <p class="center muted" style="margin-top:60px; font-size:13px;">{{ footnote }}</p>
+{%- endif %}
+</div>
 <div class="scrim"></div>
 <script src="assets/app.js"></script>
 </body>

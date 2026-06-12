@@ -2,93 +2,82 @@
 title: "Fontra Docs — redesign prototype"
 description: "Fontra documentation — redesign prototype. Learn, do, look up and understand the browser-based variable-first font editor."
 layout: home.html
+
+# ---- Everything below is page content: edit, reorder, add or remove ----
+# entries and the layout renders them as hero / doors / card sections.
+
+hero:
+  heading: Design variable fonts in your browser.
+  text: Fontra is an open-source, cross-platform, <strong>variable-first</strong> font editor. Run it locally, or on a server for real-time collaboration.
+  buttons:
+    - href: get-started.html
+      label: Make your first font →
+    - href: about-redesign.html
+      label: About this redesign
+      ghost: true
+  pills:
+    - macOS · Windows · Linux
+    - Free & open source
+    - UFO · designspace · .glyphs · TTF/OTF
+
+doors:
+  - href: get-started.html
+    icon: 🌱
+    title: New to type design
+    text: Never opened a font editor? Build a working variable font in under 30 minutes.
+    go: Start the tutorial →
+  - href: migrate.html
+    icon: 🔁
+    title: Coming from another editor
+    text: Use Glyphs or RoboFont? Map what you know onto Fontra — and try it without leaving your tool.
+    go: Migration guides →
+  - href: workflow.html
+    icon: ⚙️
+    title: Building & automating
+    text: Production pipelines, subsetting, instancing, compiling — declaratively, from the command line.
+    go: Fontra Workflow →
+
+sections:
+  - heading: Browse the docs
+    cards:
+      - href: learn.html
+        icon: 📚
+        title: Learn
+        desc: Tutorials that take you by the hand, from zero to a finished font.
+      - href: guides.html
+        icon: 🛠
+        title: Guides
+        desc: Task-focused how-tos — solve one specific problem, fast.
+      - href: reference.html
+        icon: 📖
+        title: Reference
+        desc: Every menu, panel, tool and shortcut, described precisely.
+      - href: explanations.html
+        icon: 💡
+        title: Concepts
+        desc: The ideas behind Fontra — designspace, sources, variable components.
+      - href: workflow.html
+        icon: ⚙️
+        title: Workflow
+        desc: The command-line pipeline engine, with a copy-paste recipe book.
+      - href: migrate.html
+        icon: 🔁
+        title: Migrate
+        desc: Rosetta-stone pages for Glyphs and RoboFont users.
+  - heading: Popular right now
+    cards:
+      - href: tutorial-first-font.html
+        title: Your first variable font
+        desc: Download → draw → add a Weight axis → export. 30 minutes.
+        meta: Tutorial · 🎬 video
+      - href: reference-axes.html
+        title: Axes
+        desc: Set up the variation axes of your designspace.
+        meta: Reference
+      - href: workflow.html
+        title: Subset a font for the web
+        desc: A ready-to-run Workflow recipe.
+        meta: Workflow · recipe
+
+footnote: This is a <strong>redesign prototype</strong>, not the live site. <a href="about-redesign.html">What changed and why →</a>
 ---
-<div class="homewrap">
-
-  <section class="hero">
-    <h1>Design variable fonts in your browser.</h1>
-    <p>Fontra is an open-source, cross-platform, <strong>variable-first</strong> font editor. Run it locally, or on a server for real-time collaboration.</p>
-    <div>
-      <a class="cta" href="get-started.html">Make your first font →</a>
-      <a class="cta ghost" href="about-redesign.html">About this redesign</a>
-    </div>
-    <div class="pill-row" style="justify-content:center; margin-top:26px;">
-      <span class="pill">macOS · Windows · Linux</span>
-      <span class="pill">Free &amp; open source</span>
-      <span class="pill">UFO · designspace · .glyphs · TTF/OTF</span>
-    </div>
-  </section>
-
-  <!-- three doors -->
-  <div class="doorgrid">
-    <a class="door" href="get-started.html">
-      <span class="ic">🌱</span>
-      <h3>New to type design</h3>
-      <p>Never opened a font editor? Build a working variable font in under 30 minutes.</p>
-      <span class="go">Start the tutorial →</span>
-    </a>
-    <a class="door" href="migrate.html">
-      <span class="ic">🔁</span>
-      <h3>Coming from another editor</h3>
-      <p>Use Glyphs or RoboFont? Map what you know onto Fontra — and try it without leaving your tool.</p>
-      <span class="go">Migration guides →</span>
-    </a>
-    <a class="door" href="workflow.html">
-      <span class="ic">⚙️</span>
-      <h3>Building &amp; automating</h3>
-      <p>Production pipelines, subsetting, instancing, compiling — declaratively, from the command line.</p>
-      <span class="go">Fontra Workflow →</span>
-    </a>
-  </div>
-
-  <h2>Browse the docs</h2>
-  <div class="cardgrid">
-    <a class="card" href="learn.html">
-      <span class="ic">📚</span><div class="t">Learn</div>
-      <div class="d">Tutorials that take you by the hand, from zero to a finished font.</div>
-    </a>
-    <a class="card" href="guides.html">
-      <span class="ic">🛠</span><div class="t">Guides</div>
-      <div class="d">Task-focused how-tos: solve one specific problem, fast.</div>
-    </a>
-    <a class="card" href="reference.html">
-      <span class="ic">📖</span><div class="t">Reference</div>
-      <div class="d">Every menu, panel, tool and shortcut, described precisely.</div>
-    </a>
-    <a class="card" href="explanations.html">
-      <span class="ic">💡</span><div class="t">Concepts</div>
-      <div class="d">The ideas behind Fontra: designspace, sources, variable components.</div>
-    </a>
-    <a class="card" href="workflow.html">
-      <span class="ic">⚙️</span><div class="t">Workflow</div>
-      <div class="d">The command-line pipeline engine, with a copy-paste recipe book.</div>
-    </a>
-    <a class="card" href="migrate.html">
-      <span class="ic">🔁</span><div class="t">Migrate</div>
-      <div class="d">Rosetta-stone pages for Glyphs and RoboFont users.</div>
-    </a>
-  </div>
-
-  <h2>Popular right now</h2>
-  <div class="cardgrid">
-    <a class="card" href="tutorial-first-font.html">
-      <div class="t">Your first variable font</div>
-      <div class="d">Download → draw → add a Weight axis → export. 30 minutes.</div>
-      <div class="meta">Tutorial · 🎬 video</div>
-    </a>
-    <a class="card" href="reference-axes.html">
-      <div class="t">Axes</div>
-      <div class="d">Set up the variation axes of your designspace.</div>
-      <div class="meta">Reference</div>
-    </a>
-    <a class="card" href="workflow.html">
-      <div class="t">Subset a font for the web</div>
-      <div class="d">A ready-to-run Workflow recipe.</div>
-      <div class="meta">Workflow · recipe</div>
-    </a>
-  </div>
-
-  <p class="center muted" style="margin-top:60px; font-size:13px;">
-    This is a <strong>redesign prototype</strong>, not the live site. <a href="about-redesign.html">What changed and why →</a>
-  </p>
-</div>

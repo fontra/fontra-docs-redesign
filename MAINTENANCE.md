@@ -104,12 +104,32 @@ Things to know:
 ### Why a few pages are still `.html`
 
 **All content pages are Markdown.** The remaining `.html` files are *design
-surfaces*: the home page and the section hubs (`index`, `get-started`,
-`learn`, `guides`, `reference`, `explanations`, `migrate`, `workflow`,
-`about-redesign`). They consist almost entirely of card grids and hero
-blocks — as Markdown they would be the same HTML with a different file
-extension. Editing them is design work; editing `.md` files is writing work.
-That's the dividing line.
+surfaces*: the section hubs (`get-started`, `learn`, `guides`, `reference`,
+`explanations`, `migrate`, `workflow`) and `about-redesign`. They consist
+almost entirely of card grids — as Markdown they would be the same HTML with
+a different file extension. Editing them is copy-paste of small repeating
+blocks (a card is an `<a class="card">` element with a title and description
+inside). Editing `.md` files is writing work; editing hubs is design work.
+
+### The home page is data, not markup
+
+`docs-redesign/index.html` contains **no HTML at all** — its entire content
+(hero, the three doors, every card section) is YAML front matter, rendered by
+`_layouts/home.html`:
+
+```yaml
+sections:
+  - heading: Popular right now
+    cards:
+      - href: tutorial-first-font.html
+        title: Your first variable font
+        desc: Download → draw → add a Weight axis → export. 30 minutes.
+        meta: Tutorial · 🎬 video
+```
+
+Adding a card = adding a `- href:/title:/desc:` entry. Removing a whole
+section = deleting its `- heading:` block. Reordering = moving lines.
+Indentation matters in YAML — copy an existing entry and edit it.
 
 ## 4. Adding a brand-new page
 
