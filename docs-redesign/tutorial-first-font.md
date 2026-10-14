@@ -105,8 +105,8 @@ Under **Axis values**, add two labels: `Regular` = 400 and `Black` = 900. The ex
 
 <ol class="steps">
 <li><strong>Font → Sources</strong>, then <strong>New font source…</strong>: name <code>Black</code>, location Weight = 900.</li>
-<li>Back in the editor, with the o still open, the <code>Black</code> source shows <strong>in grey</strong> under <em>Glyph sources</em> in the Designspace panel — a <em>virtual</em> source. <strong>Double-click it</strong> to copy your current drawing there.</li>
-<li>Hold the Pointer tool down and pick <strong>Pointer Tool (scaling)</strong>: select the counter and shrink it, so the o gets heavier.</li>
+<li>Back in the editor, with the o still open, the <code>Black</code> source shows <strong>in grey</strong> under <em>Glyph sources</em> in the Designspace panel — a <em>virtual</em> source. <strong>Double-click it</strong> to copy the Regular's contours there.</li>
+<li>Hold the Pointer tool down and pick <strong>Pointer Tool (scaling)</strong>: select each point of the inner contour and shift it inwards — the handles follow along — so the o gets heavier.</li>
 <li>Open the H and do the same there: double-click <code>Black</code>, then drag the <em>inner</em> stem edges outward to fatten it.</li>
 </ol>
 
