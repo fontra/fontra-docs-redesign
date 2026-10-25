@@ -41,6 +41,7 @@ export default {
 				{ href: "setup-designspace.html", label: "Set up a designspace", id: "designspace-g" },
 				{ href: "kerning-spacing.html", label: "Kerning & spacing", id: "kerning" },
 				{ href: "export-install.html", label: "Export & install", id: "export" },
+				{ href: "writing-plugins.html", label: "Writing your own plug-ins", id: "plugins" },
 			],
 		},
 		{
