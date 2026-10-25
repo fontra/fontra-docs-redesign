@@ -17,7 +17,7 @@ title: "About this redesign · Fontra Docs"
         <li><strong>Two new top-level sections:</strong> <a href="workflow.html">Workflow</a> (the CLI pipeline, currently undocumented) and <a href="migrate.html">Migrate</a> (Rosetta-stone pages). Both serve audiences the current site doesn't.</li>
         <li><strong>Video-first pages.</strong> The project already produces great short clips; here every how-to and tutorial <em>opens</em> with one rather than burying the links at the bottom.</li>
         <li><strong>Search.</strong> A client-side index (Pagefind/Lunr) — no server, works on GitHub Pages. (Mocked here; press <kbd>⌘K</kbd>.)</li>
-        <li><strong>Light/dark, responsive, accessible.</strong> Theme toggle, mobile drawer nav, keyboard-navigable, system-font stack for speed.</li>
+        <li><strong>Fontra's own identity.</strong> The Fontra icon and red, and Inria Sans, the typeface of Fontra's interface; no decorative pictograms, so the titles carry the hierarchy. Light/dark, responsive, keyboard-navigable.</li>
       </ol>
 
       <h2 id="content">Content — what changed in the writing</h2>
@@ -34,17 +34,29 @@ title: "About this redesign · Fontra Docs"
       <h2 id="build">How it would be built</h2>
       <p>Keep it boring and contributor-friendly: a static-site generator (the current site uses Jekyll; 11ty or Astro are also fine), Markdown content, a components layer for the callouts/video/step patterns shown here, Pagefind for search, and GitHub Pages for hosting — exactly the current deployment model. Nothing here requires a server or a framework rewrite.</p>
 
-      <div class="callout warn"><div class="h">⚠ Prototype caveats</div><p>Links marked <span class="planned" style="position:static">planned</span> or pointing to <code>#</code> are illustrative stubs. Screenshots are represented by striped <em>🎬 video</em> placeholders. Copy is drafted and would need a review pass against the current app before publishing.</p></div>
+      <div class="callout warn"><div class="h">Prototype caveats</div><p>Pages and cards marked <span class="status planned">Planned</span> are outlines, not content; the ones marked <span class="status ready">Written</span> have real content, drafted and awaiting a review pass. Screen recordings are represented by striped <em>video</em> placeholders. Copy is drafted and would need a review pass against the current app before publishing.</p></div>
+
+      <h2 id="status">Page status</h2>
+      <p>Every page under <code>docs-redesign/</code> declares its state in its front matter (<code>status: ready</code> or <code>status: planned</code>); this table, the sidebar badges and the home page's <em>Written so far</em> section are generated from it at build time.</p>
+      <table class="statustable">
+        <thead><tr><th>Status</th><th>Page</th><th>Section</th></tr></thead>
+        <tbody>
+        {%- for p in collections.docsPages %}{% if p.status != "" %}
+          <tr><td><span class="status {{ p.status }}">{% if p.status == "ready" %}Written{% else %}Planned{% endif %}</span></td><td><a href="{{ p.href }}">{{ p.title }}</a></td><td>{{ p.top | default: "—" }}</td></tr>
+        {%- endif %}{% endfor %}
+        </tbody>
+      </table>
+      <p class="muted small">Section hubs (Get started, Learn, Guides, Reference, Workflow, Migrate, Understand) carry no status: they are navigation, and their cards show the status of the page they point to.</p>
 
       <h2 id="explore">Explore the prototype</h2>
       <div class="cardgrid">
         <a class="card" href="index.html"><div class="t">Home</div><div class="d">The three-door landing page.</div></a>
         <a class="card" href="tutorial-first-font.html"><div class="t">Tutorial template</div><div class="d">Video blocks, steps, checkpoints, TOC.</div></a>
-        <a class="card" href="reference-axes.html"><div class="t">Reference template</div><div class="d">Tables, on-this-page nav, see-also.</div></a>
+        <a class="card" href="reference-plugins.html"><div class="t">Reference template</div><div class="d">Tables, on-this-page nav; see also <a href="reference-axes.html">Axes</a>.</div></a>
         <a class="card" href="workflow.html"><div class="t">Workflow section</div><div class="d">The new CLI home.</div></a>
         <a class="card" href="migrate.html"><div class="t">Migrate section</div><div class="d">The new migrant door.</div></a>
       </div>
-      <p class="muted">Try the theme toggle (◐, top right) and shrink the window to see the responsive nav.</p>
+      <p class="muted">Try the theme toggle (the half-disc button, top right) and shrink the window to see the responsive nav.</p>
     </article>
 
     <nav class="toc">
@@ -53,6 +65,7 @@ title: "About this redesign · Fontra Docs"
       <a href="#content">Content</a>
       <a href="#generated">Generated reference</a>
       <a href="#build">How it would be built</a>
+      <a href="#status">Page status</a>
       <a href="#explore">Explore</a>
     </nav>
   </div>

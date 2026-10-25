@@ -3,12 +3,18 @@
 // Output URLs are identical to the previous no-build setup:
 //   /index.html                      repo hub page
 //   /docs-redesign/<page>.html       the prototype pages
-//   /docs-redesign/assets/*          css + shared behavior
+//   /docs-redesign/assets/*          css, fonts, images + shared behavior
 //   /workflow/ui-mockup.html         the Workflow UI mockup (static)
 //
-// The shared topbar/sidebar chrome that assets/nav.js used to inject at
-// runtime is now rendered at build time from _data/nav.js via the
-// templates in _includes/ and _layouts/.
+// The shared topbar/sidebar chrome is rendered at build time from
+// _data/nav.js via the templates in _includes/ and _layouts/.
+//
+// Page status: every page under docs-redesign/ may declare
+//   status: ready      written — the content is there (may still need review)
+//   status: planned    a placeholder: title, outline, no content yet
+// Hub pages (section overviews) carry no status. The collections below make
+// the status visible everywhere: sidebar badges, hub cards, the home page's
+// "Written so far" section and the status table on the About page.
 
 import { IdAttributePlugin } from "@11ty/eleventy";
 
@@ -20,7 +26,43 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({
 		"./docs-redesign/assets/style.css": "/docs-redesign/assets/style.css",
 		"./docs-redesign/assets/app.js": "/docs-redesign/assets/app.js",
+		"./docs-redesign/assets/fonts": "/docs-redesign/assets/fonts",
+		"./docs-redesign/assets/img": "/docs-redesign/assets/img",
 		"./workflow/ui-mockup.html": "/workflow/ui-mockup.html",
+	});
+
+	const isDocsPage = (item) =>
+		item.inputPath.startsWith("./docs-redesign/") && !item.inputPath.endsWith("README.md");
+
+	// All prototype pages, as plain records (href is relative to docs-redesign/)
+	const record = (item) => ({
+		href: item.url.replace(/^\/docs-redesign\//, ""),
+		title: String(item.data.title || "").replace(/\s*·\s*Fontra Docs$/, ""),
+		description: item.data.description || "",
+		status: item.data.status || "",
+		top: item.data.top || "",
+		active: item.data.active || "",
+	});
+
+	eleventyConfig.addCollection("docsPages", (api) =>
+		api.getAll().filter(isDocsPage).map(record).sort((a, b) => a.title.localeCompare(b.title))
+	);
+
+	eleventyConfig.addCollection("docsReady", (api) =>
+		api
+			.getAll()
+			.filter((i) => isDocsPage(i) && i.data.status === "ready")
+			.map(record)
+			.sort((a, b) => a.title.localeCompare(b.title))
+	);
+
+	// href → status, for the sidebar and hub cards (Liquid: docsStatus[item.href])
+	eleventyConfig.addCollection("docsStatus", (api) => {
+		const map = {};
+		for (const item of api.getAll().filter(isDocsPage)) {
+			map[record(item).href] = item.data.status || "";
+		}
+		return map;
 	});
 }
 

@@ -7,11 +7,11 @@
 {% include "topbar.html" %}
 <div class="layout">
   {% include "sidebar.html" %}
-  <div class="content">
+  <main class="content">
 {{ content }}
-  </div>
+  </main>
 </div>
-<div class="scrim"></div>
+<div class="scrim" onclick="toggleNav()"></div>
 <script src="assets/app.js"></script>
 </body>
 </html>

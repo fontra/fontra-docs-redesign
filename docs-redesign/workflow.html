@@ -25,12 +25,12 @@ steps:
       <h2 id="recipes">Recipes</h2>
       <p>Copy, paste, adjust. The fastest way to learn Workflow is to modify a recipe.</p>
       <div class="cardgrid">
-        <a class="card" href="#"><div class="t">Subset a font for the web</div><div class="d">Keep a glyph set, drop the rest, compile.</div></a>
-        <a class="card" href="#"><div class="t">Extract a static instance</div><div class="d">Pin Weight 700 and export the Bold.</div></a>
-        <a class="card" href="#"><div class="t">Convert format</div><div class="d">.glyphs → .designspace, TTF → .fontra, etc.</div></a>
-        <a class="card" href="#"><div class="t">Merge two fonts</div><div class="d">Fold a symbols font into a text family.</div></a>
-        <a class="card" href="#"><div class="t">Ship only finished glyphs</div><div class="d">Filter by development status, then compile.</div></a>
-        <a class="card" href="#"><div class="t">Cubic → quadratic + round</div><div class="d">Production clean-up before export.</div></a>
+        <div class="card planned"><div class="t">Subset a font for the web</div><div class="d">Keep a glyph set, drop the rest, compile.</div><div class="meta"><span class="status planned">Planned</span></div></div>
+        <div class="card planned"><div class="t">Extract a static instance</div><div class="d">Pin Weight 700 and export the Bold.</div><div class="meta"><span class="status planned">Planned</span></div></div>
+        <div class="card planned"><div class="t">Convert format</div><div class="d">.glyphs → .designspace, TTF → .fontra, etc.</div><div class="meta"><span class="status planned">Planned</span></div></div>
+        <div class="card planned"><div class="t">Merge two fonts</div><div class="d">Fold a symbols font into a text family.</div><div class="meta"><span class="status planned">Planned</span></div></div>
+        <div class="card planned"><div class="t">Ship only finished glyphs</div><div class="d">Filter by development status, then compile.</div><div class="meta"><span class="status planned">Planned</span></div></div>
+        <div class="card planned"><div class="t">Cubic → quadratic + round</div><div class="d">Production clean-up before export.</div><div class="meta"><span class="status planned">Planned</span></div></div>
       </div>
 
       <h2 id="concepts">How it works</h2>
@@ -44,14 +44,14 @@ steps:
       <h2 id="reference">Action reference</h2>
       <p>Every action with its arguments, types and defaults — covering axes &amp; designspace, glyphs &amp; outlines, subsetting, features &amp; kerning, and compilation.</p>
       <div class="cardgrid">
-        <a class="card" href="action-reference.html"><div class="t">All actions</div><div class="d">The complete catalog, grouped by purpose.</div><div class="meta"><span class="badge new">generated from source</span></div></a>
-        <a class="card" href="writing-actions.html"><div class="t">Writing your own action</div><div class="d">Subclass, override one hook, register.</div></a>
+        {% assign st = collections.docsStatus["action-reference.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="action-reference.html"><div class="t">All actions</div><div class="d">The complete catalog, grouped by purpose.</div><div class="meta">{% if st == "planned" %}<span class="status planned">Planned</span> · {% endif %}<span class="badge new">generated from source</span></div></a>
+        {% assign st = collections.docsStatus["writing-actions.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="writing-actions.html"><div class="t">Writing your own action</div><div class="d">Subclass, override one hook, register.</div>{% if st == "planned" %}<div class="meta"><span class="status planned">Planned</span></div>{% endif %}</a>
       </div>
 
       <div class="callout tip"><div class="h">There's a UI sketch, too</div><p>A clickable mockup explores what a graphical <em>Workflow view</em> inside Fontra could look like. <a href="../workflow/ui-mockup.html">Open the mockup →</a></p></div>
     </article>
 
-    <nav class="toc">
+    <nav class="toc" aria-label="On this page">
       <div class="lbl">On this page</div>
       <a href="#hello">A first pipeline</a>
       <a href="#recipes">Recipes</a>

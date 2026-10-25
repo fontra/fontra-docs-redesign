@@ -2,12 +2,11 @@
 (function () {
   // ---- theme ----
   const root = document.documentElement;
-  const saved = localStorage.getItem("fontra-docs-theme");
-  if (saved) root.setAttribute("data-theme", saved);
+  // (head.html applies the saved theme before first paint, to avoid a flash)
   window.toggleTheme = function () {
     const cur = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     root.setAttribute("data-theme", cur);
-    localStorage.setItem("fontra-docs-theme", cur);
+    try { localStorage.setItem("fontra-docs-theme", cur); } catch (e) {}
   };
 
   // ---- mobile nav ----
@@ -41,9 +40,9 @@
     const obs = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) {
-          tocLinks.forEach(function (a) { a.style.color = ""; a.style.borderColor = ""; });
+          tocLinks.forEach(function (a) { a.classList.remove("current"); });
           const a = map[en.target.id];
-          if (a) { a.style.color = "var(--link)"; a.style.borderColor = "var(--link)"; }
+          if (a) a.classList.add("current");
         }
       });
     }, { rootMargin: "-70px 0px -70% 0px" });

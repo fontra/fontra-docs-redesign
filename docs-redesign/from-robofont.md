@@ -1,6 +1,8 @@
 ---
-title: "From RoboFont · Fontra Docs"
+title: "Fontra for RoboFont users · Fontra Docs"
+description: "The shared UFO and designspace model, precision auto-reload, and what scripting users will miss today."
 layout: article.html
+status: ready
 active: robofont
 ---
 
@@ -8,7 +10,7 @@ active: robofont
 
 # Fontra for RoboFont Users
 
-*Draft "Rosetta stone" page for docs.fontra.xyz → How-Tos. Audience: a RoboFont user evaluating Fontra. Same UFO blood, different temperament. ⚠ marks claims to verify before publishing.*
+*Draft "Rosetta stone" page for docs.fontra.xyz → How-Tos. Audience: a RoboFont user evaluating Fontra. Same UFO blood, different temperament. <span class="verify" title="To verify against the current Fontra build">verify</span> marks claims to verify before publishing.*
 
 ---
 
@@ -34,12 +36,12 @@ No conversion, no export, no risk: it's *your* UFOs on disk, edited by either ap
 | Inspector (transform, points) | **Selection info** + **Transformation** panels | Editable dimension fields included |
 | Layers | **Source layers** (foreground + backgrounds per source) | Backgrounds don't affect interpolation and needn't be compatible |
 | Mark colors | **Status colors** (*Font → Status definitions*) | Semantic by design (in progress / checking / finished…), customizable, and queryable in the [Workflow](../workflow/documentation.md) pipeline |
-| Groups & kerning editor | **Kerning tool** in the editor ⚠ group editing scope | Kern per source with live interpolation between them |
+| Groups & kerning editor | **Kerning tool** in the editor <span class="verify" title="To verify against the current Fontra build">verify</span> group editing scope | Kern per source with live interpolation between them |
 | Features (feature text editor) | *Font → Features* | FEA editing; live shaping preview is the headline 2026 feature |
-| Sets / smart sets | **Glyph sets** in the font overview | Preset and custom, shareable ⚠ |
+| Sets / smart sets | **Glyph sets** in the font overview | Preset and custom, shareable <span class="verify" title="To verify against the current Fontra build">verify</span> |
 | Test install (`⌘T`) | — ; *File → Export as* TTF/OTF, then install | A real gap for proofing rhythm; see workflow note below |
 | Scripting window, fontParts, observers | — today; Python scripting + plugin API on the 2026 roadmap | The honest big gap; see below |
-| Extensions / Mechanic | Plugin Manager ⚠ (UI plugins), no ecosystem yet | The 2026 plugin API is the watershed |
+| Extensions / Mechanic | Plugin Manager <span class="verify" title="To verify against the current Fontra build">verify</span> (UI plugins), no ecosystem yet | The 2026 plugin API is the watershed |
 | Output window | Browser console (for the curious) | Fontra's client is inspectable web tech |
 
 ## Muscle-memory map
@@ -52,7 +54,7 @@ Shortcuts are **customizable** (*Fontra → Application settings*) with JSON imp
 
 ## What you'll miss (today)
 
-**Scripting, scripting, scripting.** RoboFont is a Python IDE wearing a font editor's clothes; Fontra currently has no macro window, no fontParts, no observers, no startup scripts. Two partial consolations: the **Workflow** engine covers much of what production scripts do (subsetting, designspace surgery, batch conversion — declaratively — see the [Workflow documentation](../workflow/documentation.md)), and the server's Python core means the 2026 scripting API lands in familiar territory. Also missing: test-install, the extension ecosystem, custom tools, global (font-level) guidelines ⚠, and manual hinting.
+**Scripting, scripting, scripting.** RoboFont is a Python IDE wearing a font editor's clothes; Fontra currently has no macro window, no fontParts, no observers, no startup scripts. Two partial consolations: the **Workflow** engine covers much of what production scripts do (subsetting, designspace surgery, batch conversion — declaratively — see the [Workflow documentation](../workflow/documentation.md)), and the server's Python core means the 2026 scripting API lands in familiar territory. Also missing: test-install, the extension ecosystem, custom tools, global (font-level) guidelines <span class="verify" title="To verify against the current Fontra build">verify</span>, and manual hinting.
 
 If RoboFont is your scripting platform more than your drawing tool, Fontra today is a complement, not a replacement — and the side-by-side mode is built for exactly that.
 

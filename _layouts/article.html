@@ -3,11 +3,11 @@ layout: docs.html
 ---
 <div class="page{% unless toc %} no-toc{% endunless %}">
   <article class="article">
+{% include "status.html" %}
 {{ content }}
   </article>
 {%- if toc %}
-  <!-- ON THIS PAGE -->
-  <nav class="toc">
+  <nav class="toc" aria-label="On this page">
     <div class="lbl">On this page</div>
     {%- for t in toc %}
     <a href="#{{ t.id }}"{% if t.lvl3 %} class="lvl3"{% endif %}>{{ t.label }}</a>

@@ -1,6 +1,8 @@
 ---
-title: "Axes · Reference · Fontra Docs"
+title: "Axes · Fontra Docs"
+description: "Reference: the variation axes of a font, their ranges, mappings and value labels, and how to add or edit them."
 layout: article.html
+status: ready
 top: reference
 active: axes
 toc:
@@ -26,7 +28,7 @@ toc:
 
 Click **New axis…**. Reorder axes by drag and drop. Each axis has a name, a type, a range, optional mapping, and optional value labels.
 
-<div class="video"><div class="play">▶</div><div class="cap">🎬 adding a Weight axis</div></div>
+<div class="video"><div class="play"></div><div class="cap">adding a Weight axis</div></div>
 
 <h2 id="names">Names</h2>
 
@@ -71,7 +73,7 @@ The mapping list lets you remap user-facing values onto source values — the `a
 
 Axis value labels populate the `STAT` table and drive instance generation on export.
 
-<div class="callout warn"><div class="h">⚠ How instances are made</div><p>Fontra has no separate instance list. Its export creates <code>fvar</code> instances from axis value labels. One weight axis with Thin/Regular/Bold labels yields three instances; multiple axes yield every combination (3 weights × 3 widths = 9).</p></div>
+<div class="callout warn"><div class="h"><span class="verify" title="To verify against the current Fontra build">verify</span> How instances are made</div><p>Fontra has no separate instance list. Its export creates <code>fvar</code> instances from axis value labels. One weight axis with Thin/Regular/Bold labels yields three instances; multiple axes yield every combination (3 weights × 3 widths = 9).</p></div>
 
 | Entry | Description |
 |---|---|
@@ -86,12 +88,12 @@ Axis value labels populate the `STAT` table and drive instance generation on exp
 <h2 id="links">See also</h2>
 
 - [Designspace](designspace.html) — planning axes and sources (concept)
-- <a href="#">Cross-axis mapping</a> — avar-2 (reference)
+- Cross-axis mapping — avar-2 (reference) <span class="status planned">Planned</span>
 - [Your first variable font](tutorial-first-font.html#axis) — adding a Weight axis in practice
 
 <div class="pager">
 <a class="prev" href="reference.html"><div class="dir">← Reference</div><div class="ttl">Overview</div></a>
-<a class="next" href="#"><div class="dir">Next →</div><div class="ttl">Cross-axis mapping</div></a>
+<a class="next" href="font-sources.html"><div class="dir">Next →</div><div class="ttl">Font: Sources</div></a>
 </div>
 
-<div class="editline"><a href="#">Improve this page on GitHub</a> · Last updated 2026-06</div>
+<div class="editline"><a href="https://github.com/fontra/fontra-docs-redesign/edit/main/docs-redesign/reference-axes.md" target="_blank" rel="noopener">Improve this page on GitHub</a> · Last updated 2026-06</div>

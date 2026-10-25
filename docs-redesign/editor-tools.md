@@ -1,6 +1,7 @@
 ---
 title: "Editor & tools · Fontra Docs"
 layout: article.html
+status: planned
 top: reference
 active: editor
 ---
@@ -11,30 +12,17 @@ active: editor
 
 Every tool in the editor toolbar: pointer, pen, knife, shape, ruler, hand.
 
-<div class="callout note"><div class="h">Stub — help write this page</div><p>This page is planned in the redesign but not yet written. Edit this file on GitHub (pencil icon) and the site rebuilds automatically.</p></div>
-
 ## Pointer
 
-<div class="video"><div class="play">▶</div><div class="cap">🎬 10–20 s screen recording goes here</div></div>
-
-…
+<div class="video"><div class="play"></div><div class="cap">10–20 s screen recording goes here</div></div>
 
 ## Pen
 
-…
-
 ## Knife
-
-…
 
 ## Shapes
 
-…
-
 ## Ruler
-
-…
 
 ## Hand
 
-…

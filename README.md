@@ -26,7 +26,7 @@ This repo came out of a working session (June 2026) that started with one questi
 | [ux.md](workflow/ux.md) | Would Workflow need a UI? A layered answer: invisible fixes first, then a **Workflow view** inside Fontra — step stack, schema-generated inspectors, and a per-step font preview pin |
 | [ui-mockup.html](workflow/ui-mockup.html) | **Clickable mockup** of that Workflow view. Select steps, drag the Weight slider, move the preview pin, toggle the YAML drawer, hit Run. Static — no engine behind it |
 
-> 🖱 **Try the mockup:** open [`workflow/ui-mockup.html`](workflow/ui-mockup.html) in a browser, or visit
+> **Try the mockup:** open [`workflow/ui-mockup.html`](workflow/ui-mockup.html) in a browser, or visit
 > `https://fontra.github.io/fontra-docs-redesign/workflow/ui-mockup.html`
 
 ## Building the site
@@ -75,8 +75,8 @@ Ready-to-review drafts of the user-facing pages the strategy calls for:
 
 ## Conventions
 
-- **⚠** marks a claim that should be verified against the current Fontra builds/UI before publishing.
-- **🎬** marks a placeholder for a 10–20 second screen recording (the docs strategy argues every how-to should open with one).
+- In the repo documents, **⚠** marks a claim that should be verified against the current Fontra builds/UI before publishing, and **🎬** a placeholder for a 10–20 second screen recording (the docs strategy argues every how-to should open with one). On the site, the same two things are the `verify` tag and the striped video placeholder; the site itself uses no emoji.
+- Every site page declares `status: ready` (written) or `status: planned` (outline only) in its front matter; the sidebar, hub cards, home page and *About this redesign* show it. See [MAINTENANCE.md](MAINTENANCE.md).
 - Code-level statements cite the module they were read from; the Workflow material was verified against `fontra/fontra@e86dc88` and `fontra-compile@main`.
 
 ## Contributing / feedback

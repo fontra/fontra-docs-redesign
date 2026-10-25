@@ -5,18 +5,19 @@
 </head>
 <body>
 {% include "topbar.html" %}
-<div class="homewrap">
+<main class="homewrap">
 
 {%- if hero %}
   <section class="hero">
+    <div class="eyebrow">Fontra documentation</div>
     <h1>{{ hero.heading }}</h1>
     <p>{{ hero.text }}</p>
-    <div>
+    <div class="ctas">
       {%- for b in hero.buttons %}
-      <a class="cta{% if b.ghost %} ghost{% endif %}" href="{{ b.href }}">{{ b.label }}</a>
+      <a class="cta{% if b.ghost %} ghost{% endif %}" href="{{ b.href }}">{{ b.label }}{% unless b.ghost %}{% assign icon = "arrow" %}{% include "icons.html" %}{% endunless %}</a>
       {%- endfor %}
     </div>
-    <div class="pill-row" style="justify-content:center; margin-top:26px;">
+    <div class="pill-row center">
       {%- for p in hero.pills %}
       <span class="pill">{{ p }}</span>
       {%- endfor %}
@@ -28,21 +29,23 @@
   <div class="doorgrid">
     {%- for d in doors %}
     <a class="door" href="{{ d.href }}">
-      <span class="ic">{{ d.icon }}</span>
+      <span class="num">{{ forloop.index | prepend: "0" }}</span>
       <h3>{{ d.title }}</h3>
       <p>{{ d.text }}</p>
-      <span class="go">{{ d.go }}</span>
+      <span class="go">{{ d.go }}{% assign icon = "arrow" %}{% include "icons.html" %}</span>
     </a>
     {%- endfor %}
   </div>
 {%- endif %}
 
 {%- for section in sections %}
+  <section class="homesection">
   <h2>{{ section.heading }}</h2>
+  {%- if section.text %}<p class="sectionlede">{{ section.text }}</p>{% endif %}
   <div class="cardgrid">
     {%- for c in section.cards %}
     <a class="card" href="{{ c.href }}">
-      {% if c.icon %}<span class="ic">{{ c.icon }}</span>{% endif %}<div class="t">{{ c.title }}</div>
+      <div class="t">{{ c.title }}</div>
       <div class="d">{{ c.desc }}</div>
       {%- if c.meta %}
       <div class="meta">{{ c.meta }}</div>
@@ -50,15 +53,33 @@
     </a>
     {%- endfor %}
   </div>
+  </section>
 {%- endfor %}
+
+{%- if showReady %}
+  <section class="homesection" id="written">
+  <h2>Written so far</h2>
+  <p class="sectionlede">These pages have real content you can read today ({{ collections.docsReady.size }} of {{ collections.docsPages.size }} pages). Everything else in the sidebar is an outline, marked <span class="status planned">Planned</span>.</p>
+  <div class="cardgrid">
+    {%- for p in collections.docsReady %}
+    <a class="card" href="{{ p.href }}">
+      <div class="t">{{ p.title }}</div>
+      <div class="d">{{ p.description }}</div>
+      <div class="meta"><span class="status ready">Written</span></div>
+    </a>
+    {%- endfor %}
+  </div>
+  <p class="muted small"><a href="about-redesign.html#status">Full page status list</a></p>
+  </section>
+{%- endif %}
 
 {{ content }}
 
 {%- if footnote %}
-  <p class="center muted" style="margin-top:60px; font-size:13px;">{{ footnote }}</p>
+  <p class="center muted footnote">{{ footnote }}</p>
 {%- endif %}
-</div>
-<div class="scrim"></div>
+</main>
+<div class="scrim" onclick="toggleNav()"></div>
 <script src="assets/app.js"></script>
 </body>
 </html>

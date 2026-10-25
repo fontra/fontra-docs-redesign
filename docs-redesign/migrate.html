@@ -9,8 +9,8 @@ active: migrate
       <p class="lede">You already know how to make fonts. These pages map your existing vocabulary onto Fontra — and show you how to try it <strong>without leaving the tool you use today</strong>.</p>
 
       <div class="cardgrid">
-        <a class="card" href="from-glyphs.html"><span class="ic">🅖</span><div class="t">Fontra for Glyphs users</div><div class="d">Masters → sources, brace layers → glyph sources, smart components → variable components. Plus shortcuts and honest gaps.</div></a>
-        <a class="card" href="from-robofont.html"><span class="ic">🤖</span><div class="t">Fontra for RoboFont users</div><div class="d">Same UFO + designspace blood. Precision auto-reload, and what scripting users will miss today.</div></a>
+        {% assign st = collections.docsStatus["from-glyphs.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="from-glyphs.html"><div class="t">Fontra for Glyphs users</div><div class="d">Masters → sources, brace layers → glyph sources, smart components → variable components. Plus shortcuts and honest gaps.</div>{% if st == "planned" %}<div class="meta"><span class="status planned">Planned</span></div>{% endif %}</a>
+        {% assign st = collections.docsStatus["from-robofont.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="from-robofont.html"><div class="t">Fontra for RoboFont users</div><div class="d">Same UFO + designspace blood. Precision auto-reload, and what scripting users will miss today.</div>{% if st == "planned" %}<div class="meta"><span class="status planned">Planned</span></div>{% endif %}</a>
       </div>
 
       <h2 id="zero-risk">The zero-risk way to try Fontra</h2>
@@ -38,7 +38,7 @@ active: migrate
       <p class="muted">The per-editor pages go into full detail, including keyboard shortcuts and exactly what's missing today.</p>
     </article>
 
-    <nav class="toc">
+    <nav class="toc" aria-label="On this page">
       <div class="lbl">On this page</div>
       <a href="#zero-risk">Zero-risk trial</a>
       <a href="#map">What maps to what</a>

@@ -61,6 +61,7 @@ to *see* the result before committing.
 ---
 title: "Install Fontra Pak · Fontra Docs"   ← browser tab title
 layout: article.html                         ← Markdown pages always use this
+status: planned                              ← `ready` (written) or `planned` (outline only)
 top: get-started                             ← which TOPBAR entry is highlighted
 active: install                              ← which SIDEBAR entry is highlighted
 ---
@@ -77,6 +78,14 @@ Things to know:
 - `top:` and `active:` are **ids**, not labels. They must match an `id` in
   `_data/nav.js`. Omit `top:` for sections that have no topbar entry
   (Migrate, Understand).
+- `status:` is the page's state, and the **only place it is declared**:
+  `ready` means the content is written (it may still need review),
+  `planned` means an outline with no content yet. The build turns it into
+  the banner at the top of the page, the *Planned* badge in the sidebar and
+  on hub cards, the home page's *Written so far* section and the status
+  table on *About this redesign*. Hub pages have no `status:`. When you
+  finish writing a planned page, change `planned` to `ready` and everything
+  updates.
 - Headings (`##`) automatically get ids and `#` anchor links, and feed the
   scroll-spy table of contents.
 - Raw HTML is allowed inside Markdown — that's how breadcrumbs, callouts and
@@ -84,7 +93,11 @@ Things to know:
   page:
   - callout: `<div class="callout note"><div class="h">Heading</div><p>Text.</p></div>`
     (also `callout tip`, `callout warn`)
-  - video placeholder: `<div class="video"><div class="play">▶</div><div class="cap">🎬 description</div></div>`
+  - video placeholder: `<div class="video"><div class="play"></div><div class="cap">description</div></div>`
+    (the play button and the "Video" label are drawn by CSS)
+  - a claim to verify against the current app: `<span class="verify">verify</span>`
+  - no emoji or decorative pictograms anywhere; the few icons the chrome
+    uses are inline SVG in `_includes/icons.html`
 - Long pages can show an **"On this page"** column: list the sections in the
   front matter and give your headings matching ids (write those headings as
   one-line HTML so the anchor ids stay stable):
@@ -124,12 +137,14 @@ sections:
       - href: tutorial-first-font.html
         title: Your first variable font
         desc: Download → draw → add a Weight axis → export. 30 minutes.
-        meta: Tutorial · 🎬 video
+        meta: Tutorial · video
 ```
 
 Adding a card = adding a `- href:/title:/desc:` entry. Removing a whole
 section = deleting its `- heading:` block. Reordering = moving lines.
 Indentation matters in YAML — copy an existing entry and edit it.
+`showReady: true` adds the *Written so far* section, generated from the
+pages whose `status:` is `ready`; nothing to maintain by hand.
 
 ## 4. Adding a brand-new page
 
@@ -139,7 +154,7 @@ Indentation matters in YAML — copy an existing entry and edit it.
 2. **Give it a sidebar entry** in `_data/nav.js`: add
    `{ href: "anchors.html", label: "Anchors & marks", id: "anchors" }`
    to the right group, and use `active: anchors` in the page's front matter.
-   (An entry can carry `tag: "planned"` to show the little *planned* badge.)
+   (The *Planned* badge comes from the page's own `status:`, not from here.)
 3. **Link it from the relevant hub page** (`learn.html`, `guides.html`, …) by
    pointing one of the cards at it — search the hub for `href="#"` stubs.
 
@@ -155,6 +170,8 @@ changes the URL, so update links pointing at it (`grep` for the old name).
 | `_includes/topbar.html`, `sidebar.html`, `head.html` | chrome changes on every page |
 | `_layouts/docs.html`, `article.html`, `home.html` | page skeletons change |
 | `docs-redesign/assets/style.css` | styling, copied as-is — see [RETHEMING.md](RETHEMING.md) |
+| `docs-redesign/assets/fonts/`, `assets/img/` | Inria Sans (Fontra's UI typeface, SIL OFL) and the Fontra icon, copied as-is from [fontra/fontra](https://github.com/fontra/fontra) |
+| `_includes/icons.html`, `status.html` | the inline SVG icons; the status banner |
 | `docs-redesign/assets/app.js` | client behavior (theme, mobile nav, ⌘K, scroll-spy) |
 | `eleventy.config.js` | build rules: what's a page, what's copied, what's ignored |
 | `.eleventyignore` | which files are repo-documents only, **not** site pages |
@@ -186,9 +203,10 @@ For anything beyond a typo fix, prefer pull requests:
 - The deploy workflow runs the **build** on PRs' merges to `main` only, but a
   reviewer can check out the branch and `npm start` to see the result.
 - Content conventions to enforce in review: every claim about app behavior
-  marked **⚠** until verified against a current build; every how-to opens
-  with (or stubs out) a 🎬 recording; pages end without dead `href="#"`
-  links unless the target is a known stub.
+  tagged `verify` until checked against a current build; every how-to opens
+  with (or stubs out) a video placeholder; `status:` is accurate; no dead
+  `href="#"` links (a page that does not exist yet is a non-linked
+  `card planned`); no emoji.
 
 ## 8. Differences in the live-docs repo (fontra-docs)
 

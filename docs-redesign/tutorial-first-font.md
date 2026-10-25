@@ -2,6 +2,7 @@
 title: "Your first variable font · Fontra Docs"
 description: "Make your first variable font in Fontra in under 30 minutes — no drawing skills required."
 layout: article.html
+status: ready
 top: get-started
 active: first-font
 toc:
@@ -24,8 +25,8 @@ toc:
 <p class="lede">Make a real, working variable font — two letters, a Weight axis, and a slider that morphs them from Regular to Black — and install it on your computer. No drawing skills needed.</p>
 
 <div class="pill-row">
-<span class="pill">⏱ ~30 minutes</span>
-<span class="pill">🎚 Beginner</span>
+<span class="pill">~30 minutes</span>
+<span class="pill">Beginner</span>
 <span class="pill">macOS · Windows · Linux</span>
 </div>
 
@@ -36,7 +37,7 @@ toc:
 
 <h2 id="install">1. Install &amp; create a font</h2>
 
-<div class="video"><div class="play">▶</div><div class="cap">🎬 download → New font → browser opens</div></div>
+<div class="video"><div class="play"></div><div class="cap">download → New font → browser opens</div></div>
 
 <ol class="steps">
 <li><div class="st-h">Download Fontra Pak</div> Grab it from <a href="https://fontra.xyz">fontra.xyz</a> and install it.</li>
@@ -44,7 +45,7 @@ toc:
 <li><div class="st-h">Your browser opens</div> This <em>is</em> Fontra — running in your browser, but everything stays on your computer. No internet needed, nothing uploaded.</li>
 </ol>
 
-<div class="callout tip"><div class="h">✓ Checkpoint</div><p>A browser tab named after your font, showing an empty glyph overview.</p></div>
+<div class="callout tip"><div class="h">Checkpoint</div><p>A browser tab named after your font, showing an empty glyph overview.</p></div>
 
 <h2 id="first-glyph">2. Create your first glyph</h2>
 
@@ -57,7 +58,7 @@ We'll start with **H** — the friendliest letter in type design.
 
 <h2 id="draw">3. Draw H and o — no Bézier required</h2>
 
-<div class="video"><div class="play">▶</div><div class="cap">🎬 three rectangles → H · two ellipses → o</div></div>
+<div class="video"><div class="play"></div><div class="cap">three rectangles → H · two ellipses → o</div></div>
 
 <h3 id="the-h">The H — three rectangles</h3>
 
@@ -75,11 +76,11 @@ Select all (<kbd>⌘</kbd><kbd>A</kbd>) and apply **Remove overlap** so the thre
 
 Add `o` in Preview text and create it. With the Shape tool in **ellipse** mode, draw an outer oval (x 40, y −10, w 420, h 520 — the overshoot below the baseline is intentional) and an inner oval (x 140, y 90, w 220, h 320). Select both and **Subtract** to punch the counter. Advance width `500`.
 
-<div class="callout tip"><div class="h">✓ Checkpoint</div><p>Typing <code>HoHoHo</code> in Preview text shows your two letters spelling like a font.</p></div>
+<div class="callout tip"><div class="h">Checkpoint</div><p>Typing <code>HoHoHo</code> in Preview text shows your two letters spelling like a font.</p></div>
 
 <h2 id="axis">4. Add a Weight axis</h2>
 
-<div class="video"><div class="play">▶</div><div class="cap">🎬 Axes dialog: New axis</div></div>
+<div class="video"><div class="play"></div><div class="cap">Axes dialog: New axis</div></div>
 
 Open **Font → Axes → New axis…** and fill in:
 
@@ -97,7 +98,7 @@ Under **Axis values**, add two labels: `Regular` = 400 and `Black` = 900. The ex
 
 <h2 id="black">5. Draw the Black</h2>
 
-<div class="video"><div class="play">▶</div><div class="cap">🎬 virtual source → fatten stems</div></div>
+<div class="video"><div class="play"></div><div class="cap">virtual source → fatten stems</div></div>
 
 <ol class="steps">
 <li><strong>Font → Sources → New source…</strong>: name <code>Black</code>, location Weight = 900.</li>
@@ -106,19 +107,19 @@ Under **Axis values**, add two labels: `Regular` = 400 and `Black` = 900. The ex
 </ol>
 
 <div class="callout warn">
-<div class="h">⚠ One rule makes interpolation work</div>
+<div class="h"><span class="verify" title="To verify against the current Fontra build">verify</span> One rule makes interpolation work</div>
 <p>Every source must have the <strong>same contours, same order, same number of points</strong>. That's why we <em>copied</em> the Regular and pushed its points around. If sources diverge, Fontra shows a <strong>bug icon</strong> next to the source.</p>
 </div>
 
 <h2 id="magic">6. The magic</h2>
 
-<div class="video"><div class="play">▶</div><div class="cap">🎬 the slider gliding, letters breathing</div></div>
+<div class="video"><div class="play"></div><div class="cap">the slider gliding, letters breathing</div></div>
 
 Type `HoHoHo` and drag the Weight slider slowly from 400 to 900. Your letters *glide* through every weight in between. Stop at 547 — that weight exists now, and nobody drew it. This is what **variable-first** means: you never configured interpolation, you never left it.
 
 <h2 id="export">7. Export and install</h2>
 
-<div class="video"><div class="play">▶</div><div class="cap">🎬 Export as → TTF → installed</div></div>
+<div class="video"><div class="play"></div><div class="cap">Export as → TTF → installed</div></div>
 
 <ol class="steps">
 <li><strong>File → Export as…</strong> → <strong>TrueType (.ttf)</strong> → save.</li>
@@ -126,7 +127,7 @@ Type `HoHoHo` and drag the Weight slider slowly from 400 to 900. Your letters *g
 <li>Open any app with a variable-font slider, or drop the file on <a href="https://wakamaifondue.com" target="_blank" rel="noopener">wakamaifondue.com</a>. Type <code>HoHoHo</code>. Try every weight.</li>
 </ol>
 
-<div class="callout tip"><div class="h">🎉 You made a variable font in half an hour.</div><p>Real, installable, with a working axis and two named styles.</p></div>
+<div class="callout tip"><div class="h">Done: you made a variable font in half an hour.</div><p>Real, installable, with a working axis and two named styles.</p></div>
 
 ---
 
@@ -145,4 +146,4 @@ Type `HoHoHo` and drag the Weight slider slowly from 400 to 900. Your letters *g
 <a class="next" href="learn.html"><div class="dir">Next →</div><div class="ttl">Drawing with the pen tool</div></a>
 </div>
 
-<div class="editline">🎬 = a 10–20 s screen recording goes here · <a href="#">Improve this page on GitHub</a> · Last updated 2026-06</div>
+<div class="editline">Striped frames mark where a 10–20 s screen recording goes · <a href="https://github.com/fontra/fontra-docs-redesign/edit/main/docs-redesign/tutorial-first-font.md" target="_blank" rel="noopener">Improve this page on GitHub</a> · Last updated 2026-06</div>

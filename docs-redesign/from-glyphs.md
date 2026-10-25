@@ -1,6 +1,8 @@
 ---
-title: "From Glyphs · Fontra Docs"
+title: "Fontra for Glyphs users · Fontra Docs"
+description: "A vocabulary map from Glyphs to Fontra, the honest gaps, and a zero-risk way to try Fontra alongside Glyphs."
 layout: article.html
+status: ready
 active: glyphs
 ---
 
@@ -8,7 +10,7 @@ active: glyphs
 
 # Fontra for Glyphs Users
 
-*Draft "Rosetta stone" page for docs.fontra.xyz → How-Tos. Audience: a Glyphs user evaluating Fontra. Tone: honest mapping, no conversion pressure. ⚠ marks claims to verify against the current builds before publishing.*
+*Draft "Rosetta stone" page for docs.fontra.xyz → How-Tos. Audience: a Glyphs user evaluating Fontra. Tone: honest mapping, no conversion pressure. Claims tagged <span class="verify">verify</span> are to be checked against the current builds before publishing.*
 
 ---
 
@@ -20,7 +22,7 @@ You don't have to leave Glyphs to use Fontra. Fontra opens `.glyphs` and `.glyph
 2. Keep working in Glyphs. Hit save.
 3. Watch Fontra update, live.
 
-Fontra works as a second, synchronized view of your real project — useful on its own (e.g. full-designspace preview on a second monitor), and the safest possible test drive. Writing back to `.glyphs` is currently **partial** ⚠ — keep Glyphs as the source of truth until you've verified your round-trip, or convert a copy via *File → Export as* (`.fontra` or `.designspace + UFO`).
+Fontra works as a second, synchronized view of your real project — useful on its own (e.g. full-designspace preview on a second monitor), and the safest possible test drive. Writing back to `.glyphs` is currently **partial** <span class="verify" title="To verify against the current Fontra build">verify</span> — keep Glyphs as the source of truth until you've verified your round-trip, or convert a copy via *File → Export as* (`.fontra` or `.designspace + UFO`).
 
 ## Vocabulary map
 
@@ -30,12 +32,12 @@ Fontra works as a second, synchronized view of your real project — useful on i
 | Instance | **Axis value labels** (*Font → Axes*) | No instance list yet: exports synthesize named instances from the labels you define per axis (all combinations for multiple axes) |
 | Axes (Font Info → Axes) | *Font → Axes* | Plus visual avar mapping graph, and avar-2 cross-axis mapping |
 | Brace layer `{400}` (intermediate master) | **Glyph-level source** at that location | First-class: click **+** in the Glyph sources list, pick a location — no name syntax |
-| Bracket layer `[600]` (alternate glyph by axis range) | Designspace **rules / conditional substitutions** ⚠ | Supported in the data model; UI editing currently limited ⚠ |
+| Bracket layer `[600]` (alternate glyph by axis range) | Designspace **rules / conditional substitutions** <span class="verify" title="To verify against the current Fontra build">verify</span> | Supported in the data model; UI editing currently limited <span class="verify" title="To verify against the current Fontra build">verify</span> |
 | Smart component / smart glyph | **Variable component** | Deeper than smart components: variable components nest, and their axes interpolate across the whole designspace — this is the feature Fontra was built around |
 | Corner / cap components | — | No equivalent yet |
 | Master layer / backup layers | **Source layers** (foreground + any number of background layers) | Background layers don't need to be compatible; foreground is what interpolates |
 | Mark color | **Status colors** (*Font → Status definitions*) | Customizable per project, designed for tracking development progress |
-| Features (auto-generated) | *Font → Features* — manual FEA | No suffix-driven auto features (no auto `liga`, `ccmp`…). Kerning and anchor-based mark positioning are generated at export ⚠ (fontmake feature writers) |
+| Features (auto-generated) | *Font → Features* — manual FEA | No suffix-driven auto features (no auto `liga`, `ccmp`…). Kerning and anchor-based mark positioning are generated at export <span class="verify" title="To verify against the current Fontra build">verify</span> (fontmake feature writers) |
 | Kerning window | **Kerning tool** in the editor | Kern in text context, per source, with live interpolation |
 | Glyph Info database | Built-in glyph data + **Related glyphs & characters** panel | Unicode assignment from glyph names works as you'd expect |
 | Text tool (T) | The canvas **is** a text view | There is no separate text mode: you type, then double-click a glyph to edit it in place, in line context |
@@ -43,7 +45,7 @@ Fontra works as a second, synchronized view of your real project — useful on i
 | Palette: dimensions | **Selection info / Transformation panel** | Editable width/height fields for the selection |
 | Filters (offset, round corners…) | — (partial: path operations, remove overlap) | No filter ecosystem; transformation panel covers union/subtract/intersect/exclude |
 | Custom parameters | — | No equivalent; some map to font info fields, others to export options |
-| Macro window / plugins | — today; scripting + plugin API on the 2026 roadmap | Fontra has a Plugin Manager for UI plugins ⚠ scope differs from Glyphs plugins |
+| Macro window / plugins | — today; scripting + plugin API on the 2026 roadmap | Fontra has a Plugin Manager for UI plugins <span class="verify" title="To verify against the current Fontra build">verify</span> scope differs from Glyphs plugins |
 | File → Export | *File → Export as* | TTF, OTF (incl. variable CFF2), UFO, designspace, `.fontra`, rcjk |
 
 ## Muscle-memory map
@@ -59,7 +61,7 @@ Fontra shortcuts are **fully customizable** (*Fontra → Application settings*),
 | Zoom in/out | `⌘+` / `⌘−` | same |
 | Undo / redo | `⌘Z` / `⇧⌘Z` | same |
 | Decompose | `⇧⌘D` | same |
-| Previous/next master | `⌘1…9` ⚠ | `⌘↑` / `⌘↓` (previous/next source) |
+| Previous/next master | `⌘1…9` <span class="verify" title="To verify against the current Fontra build">verify</span> | `⌘↑` / `⌘↓` (previous/next source) |
 | Edit across masters | select-all-layers tool | `⌘E` (toggle edit all source layers) |
 
 ## What you gain

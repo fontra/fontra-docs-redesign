@@ -1,6 +1,7 @@
 ---
 title: "Keyboard shortcuts · Fontra Docs"
 layout: article.html
+status: planned
 top: reference
 active: shortcuts
 ---
@@ -11,18 +12,11 @@ active: shortcuts
 
 Default shortcuts, and how to customize and share them.
 
-<div class="callout note"><div class="h">Stub — help write this page</div><p>This page is planned in the redesign but not yet written. Edit this file on GitHub (pencil icon) and the site rebuilds automatically.</p></div>
-
 ## Defaults
 
-<div class="video"><div class="play">▶</div><div class="cap">🎬 10–20 s screen recording goes here</div></div>
-
-…
+<div class="video"><div class="play"></div><div class="cap">10–20 s screen recording goes here</div></div>
 
 ## Customizing
 
-…
-
 ## Sharing
 
-…
