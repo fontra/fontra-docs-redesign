@@ -37,7 +37,7 @@ toc:
 
 <div class="callout tip">
 <div class="h">Do it inside Fontra, step by step</div>
-<p>The same tutorial exists as a lesson that runs inside the editor, with a bubble on each thing to click and a check when the step is done: the <a href="https://github.com/fontra/fontra-tutorials">Fontra Tutorials</a> plug-in. Add the address <code>fontra/fontra-tutorials</code> under <em>Application settings › Plugins</em>, reload, and open <strong>Your first font</strong> in the Tutorials panel. The page you are reading is its long version.</p>
+<p>The same tutorial exists as a lesson that runs inside the editor, with a bubble on each thing to click and a check when the step is done: the <a href="https://github.com/Uplus-Type/fontra-tutorials">Fontra Tutorials</a> plug-in. Add the address <code>Uplus-Type/fontra-tutorials</code> under <em>Application settings › Plugins</em>, reload, and open <strong>Your first font</strong> in the Tutorials panel. The page you are reading is its long version.</p>
 </div>
 
 <h2 id="install">1. Install &amp; create a font</h2>
