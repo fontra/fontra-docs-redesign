@@ -83,7 +83,7 @@ Things to know:
   `planned` means an outline with no content yet. The build turns it into
   the banner at the top of the page, the *Planned* badge in the sidebar and
   on hub cards, the home page's *Written so far* section and the status
-  table on *About this redesign*. Hub pages have no `status:`. When you
+  table on *About these docs*. Hub pages have no `status:`. When you
   finish writing a planned page, change `planned` to `ready` and everything
   updates.
 - Headings (`##`) automatically get ids and `#` anchor links, and feed the

@@ -1,6 +1,6 @@
 <header class="topbar">
   <button class="iconbtn menuToggle" onclick="toggleNav()" aria-label="Menu">{% assign icon = "menu" %}{% include "icons.html" %}</button>
-  <a class="brand" href="index.html"><img class="mark" src="assets/img/fontra-icon.svg" alt="" width="26" height="26"><span class="name">Fontra</span><span class="docs">Docs</span><span class="tag">Prototype</span></a>
+  <a class="brand" href="index.html"><img class="mark" src="assets/img/fontra-icon.svg" alt="" width="26" height="26"><span class="name">Fontra</span><span class="docs">Docs</span></a>
   <nav class="topnav" aria-label="Sections">
     {%- for item in nav.topnav %}
     <a href="{{ item.href }}"{% if item.id == top %} class="on" aria-current="page"{% endif %}>{{ item.label }}</a>

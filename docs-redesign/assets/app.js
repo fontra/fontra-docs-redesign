@@ -1,4 +1,4 @@
-/* Fontra Docs redesign prototype — shared behavior */
+/* Fontra Docs — shared behavior */
 (function () {
   // ---- theme ----
   const root = document.documentElement;
@@ -17,7 +17,7 @@
 
   // ---- mock search ----
   window.mockSearch = function () {
-    alert("Search is a mockup in this prototype.\n\nThe real site would use a client-side index (e.g. Pagefind or Lunr) over all pages — no server needed, works on GitHub Pages.");
+    alert("Search is not wired up yet.\n\nPlanned: a client-side index (Pagefind) over all pages, built with the site.");
   };
   document.addEventListener("keydown", function (e) {
     if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") { e.preventDefault(); window.mockSearch(); }

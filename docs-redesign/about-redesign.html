@@ -1,11 +1,11 @@
 ---
-title: "About this redesign · Fontra Docs"
+title: "About these docs · Fontra Docs"
 ---
   <div class="page">
     <article class="article">
-      <div class="breadcrumb"><a href="index.html">Docs</a> › About this redesign</div>
-      <h1>About this redesign</h1>
-      <p class="lede">This prototype proposes an update to <a href="https://docs.fontra.xyz" target="_blank" rel="noopener">docs.fontra.xyz</a> in two dimensions: <strong>shape</strong> (information architecture and visual design) and <strong>content</strong> (what's written, and what's missing). It's a draft for discussion, not a finished site.</p>
+      <div class="breadcrumb"><a href="index.html">Docs</a> › About these docs</div>
+      <h1>About these docs</h1>
+      <p class="lede">This site is the new <a href="https://docs.fontra.xyz" target="_blank" rel="noopener">docs.fontra.xyz</a>. It changed the previous docs in two dimensions: <strong>shape</strong> (information architecture and visual design) and <strong>content</strong> (what's written, and what's missing). Much of it is still being written; the <a href="#status">status table</a> says what is there.</p>
 
       <div class="callout note"><div class="h">What stays the same</div><p>The current docs already use the <a href="https://diataxis.fr" target="_blank" rel="noopener">Diátaxis</a> system (tutorials / how-tos / reference / explanations), are open-source and CC&nbsp;BY. That foundation is sound. This redesign keeps Diátaxis and improves the layer on top of it.</p></div>
 
@@ -34,7 +34,7 @@ title: "About this redesign · Fontra Docs"
       <h2 id="build">How it would be built</h2>
       <p>Keep it boring and contributor-friendly: a static-site generator (the current site uses Jekyll; 11ty or Astro are also fine), Markdown content, a components layer for the callouts/video/step patterns shown here, Pagefind for search, and GitHub Pages for hosting — exactly the current deployment model. Nothing here requires a server or a framework rewrite.</p>
 
-      <div class="callout warn"><div class="h">Prototype caveats</div><p>Pages and cards marked <span class="status planned">Planned</span> are outlines, not content; the ones marked <span class="status ready">Written</span> have real content, drafted and awaiting a review pass. Screen recordings are represented by striped <em>video</em> placeholders. Copy is drafted and would need a review pass against the current app before publishing.</p></div>
+      <div class="callout warn"><div class="h">Work in progress</div><p>Pages and cards marked <span class="status planned">Planned</span> are outlines, not content; the ones marked <span class="status ready">Written</span> have real content, drafted and awaiting a review pass. Screen recordings are represented by striped <em>video</em> placeholders. Copy is drafted and would need a review pass against the current app before publishing.</p></div>
 
       <h2 id="status">Page status</h2>
       <p>Every page under <code>docs-redesign/</code> declares its state in its front matter (<code>status: ready</code> or <code>status: planned</code>); this table, the sidebar badges and the home page's <em>Written so far</em> section are generated from it at build time.</p>
@@ -48,7 +48,7 @@ title: "About this redesign · Fontra Docs"
       </table>
       <p class="muted small">Section hubs (Get started, Learn, Guides, Reference, Workflow, Migrate, Understand) carry no status: they are navigation, and their cards show the status of the page they point to.</p>
 
-      <h2 id="explore">Explore the prototype</h2>
+      <h2 id="explore">Where to start</h2>
       <div class="cardgrid">
         <a class="card" href="index.html"><div class="t">Home</div><div class="d">The three-door landing page.</div></a>
         <a class="card" href="tutorial-first-font.html"><div class="t">Tutorial template</div><div class="d">Video blocks, steps, checkpoints, TOC.</div></a>
