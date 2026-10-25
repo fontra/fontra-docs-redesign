@@ -331,7 +331,7 @@ a.card:hover { border-color: var(--accent); text-decoration: none; }
 .hero .cta.ghost:hover { border-color: var(--text-soft); background: var(--bg-soft); }
 .hero .pill-row { margin-top: 26px; }
 
-.doorgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; max-width: 980px; margin: 18px auto 0; padding: 0 24px; }
+.doorgrid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin: 18px 0 0; }
 .door {
   border: 1px solid var(--border); border-radius: 12px; padding: 22px 22px 20px; background: var(--panel); color: var(--text);
   display: flex; flex-direction: column;
