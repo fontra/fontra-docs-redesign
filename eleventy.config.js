@@ -1,7 +1,7 @@
 // Eleventy build for Fontra Docs.
 //
 // Output URLs are identical to the previous no-build setup:
-//   /index.html                      repo hub page
+//   /index.html                      redirects to /docs-redesign/
 //   /docs-redesign/<page>.html       the docs pages
 //   /docs-redesign/assets/*          css, fonts, images + shared behavior
 //

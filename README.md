@@ -22,7 +22,7 @@ The Workflow engine analysis, the draft Workflow documentation, the proposed ext
 
 ## Building the site
 
-The published site (the root hub and the docs site) is built with [Eleventy (11ty)](https://www.11ty.dev/) — the same
+The published site (`/` redirects to `/docs-redesign/`) is built with [Eleventy (11ty)](https://www.11ty.dev/) — the same
 generator as fontra-blog and the proposed fontra-docs migration:
 
 ```
