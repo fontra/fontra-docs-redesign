@@ -177,7 +177,7 @@ changes the URL, so update links pointing at it (`grep` for the old name).
 | `eleventy.config.js` | build rules: what's a page, what's copied, what's ignored |
 | `.eleventyignore` | which files are repo-documents only, **not** site pages |
 
-Repo documents (`understanding/`, `strategy/`, `drafts/`, `workflow/*.md`)
+Repo documents (`understanding/`, `strategy/`, `drafts/`)
 are intentionally not built — they're for reading on GitHub. When a draft is
 ready to become a real page, copy it into `docs-redesign/` and give it front
 matter (that's exactly how `from-glyphs.md` and `from-robofont.md` were made).

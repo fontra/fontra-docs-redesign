@@ -1,10 +1,9 @@
-// Eleventy build for the docs-redesign prototype.
+// Eleventy build for Fontra Docs.
 //
 // Output URLs are identical to the previous no-build setup:
 //   /index.html                      repo hub page
-//   /docs-redesign/<page>.html       the prototype pages
+//   /docs-redesign/<page>.html       the docs pages
 //   /docs-redesign/assets/*          css, fonts, images + shared behavior
-//   /workflow/ui-mockup.html         the Workflow UI mockup (static)
 //
 // The shared topbar/sidebar chrome is rendered at build time from
 // _data/nav.js via the templates in _includes/ and _layouts/.
@@ -28,13 +27,12 @@ export default async function (eleventyConfig) {
 		"./docs-redesign/assets/app.js": "/docs-redesign/assets/app.js",
 		"./docs-redesign/assets/fonts": "/docs-redesign/assets/fonts",
 		"./docs-redesign/assets/img": "/docs-redesign/assets/img",
-		"./workflow/ui-mockup.html": "/workflow/ui-mockup.html",
 	});
 
 	const isDocsPage = (item) =>
 		item.inputPath.startsWith("./docs-redesign/") && !item.inputPath.endsWith("README.md");
 
-	// All prototype pages, as plain records (href is relative to docs-redesign/)
+	// All docs pages, as plain records (href is relative to docs-redesign/)
 	const record = (item) => ({
 		href: item.url.replace(/^\/docs-redesign\//, ""),
 		title: String(item.data.title || "").replace(/\s*·\s*Fontra Docs$/, ""),
