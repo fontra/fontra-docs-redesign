@@ -55,7 +55,7 @@ Fontra shortcuts are **fully customizable** (*Fontra → Application settings*),
 | Select tool | `V` | `1` |
 | Pen tool | `P` | `2` |
 | Knife | `E` | `3` |
-| Hand | `space` | `6` (and `space` previews) |
+| Hand | `space` | `7`, or hold `space`: hand and preview together |
 | Zoom in/out | `⌘+` / `⌘−` | same |
 | Undo / redo | `⌘Z` / `⇧⌘Z` | same |
 | Decompose | `⇧⌘D` | same |

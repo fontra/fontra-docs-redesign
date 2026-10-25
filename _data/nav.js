@@ -28,6 +28,11 @@ export default {
 			label: "Learn",
 			items: [
 				{ href: "learn.html", label: "All tutorials", id: "learn" },
+				{ href: "tour-editor.html", label: "Around the editor", id: "tour-editor" },
+				{ href: "tour-drawing.html", label: "Drawing: tools & panels", id: "tour-drawing" },
+				{ href: "tour-font-info.html", label: "Font info & designspace", id: "tour-font-info" },
+				{ href: "tour-font-overview.html", label: "The font overview", id: "tour-font-overview" },
+				{ href: "tour-settings.html", label: "Settings", id: "tour-settings" },
 				{ href: "pen-tool.html", label: "Drawing with the pen tool", id: "pen" },
 				{ href: "editing-across-sources.html", label: "Editing across sources", id: "multisource" },
 				{ href: "variable-components-tutorial.html", label: "Variable components", id: "varcomp-t" },
