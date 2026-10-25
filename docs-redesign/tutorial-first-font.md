@@ -57,17 +57,19 @@ toc:
 We'll start with **H** — the friendliest letter in type design.
 
 <ol class="steps">
-<li>Open the <strong>editor view</strong> and the <strong>Preview text</strong> panel; type <code>H</code>.</li>
-<li>The canvas shows a grey, empty placeholder. <strong>Double-click it</strong> and confirm <strong>Create</strong>. Fontra assigns the right Unicode for you.</li>
+<li>Open the <strong>editor view</strong>, click in the <strong>Preview text</strong> panel (left column) and type <code>H</code>.</li>
+<li>The canvas shows a grey, empty placeholder. <strong>Double-click it</strong> and confirm <strong>Create</strong>: Fontra assigns the right Unicode for you. <strong>Double-click it again</strong> to edit it.</li>
 </ol>
+
+<div class="callout tip"><div class="h">Any glyph, any name</div><p>In Preview text, a slash followed by a name stands for a glyph: <code>/a.alt</code> shows (and lets you create) a glyph named <code>a.alt</code>.</p></div>
 
 <h2 id="draw">3. Draw H and o — no Bézier required</h2>
 
-<div class="video"><div class="play"></div><div class="cap">three rectangles → H · two ellipses → o</div></div>
+<div class="video"><div class="play"></div><div class="cap">three rectangles → H · two ellipses, one reversed → o</div></div>
 
 <h3 id="the-h">The H — three rectangles</h3>
 
-Pick the **Shape tool** (rectangle), and use the Selection info panel to type exact values:
+Pick the **Shape tool** (rectangle) and drag three rough rectangles. Then make them exact: take the **Pointer tool**, **double-click** a rectangle to select the whole contour, and type its values in the **Transformation** panel (*Dimensions* for the width and height, *Move* for the position):
 
 | Part | x | y | width | height |
 |---|---|---|---|---|
@@ -75,11 +77,13 @@ Pick the **Shape tool** (rectangle), and use the Selection info panel to type ex
 | Right stem | 430 | 0 | 110 | 700 |
 | Crossbar | 60 | 300 | 480 | 100 |
 
-Select all (<kbd>⌘</kbd><kbd>A</kbd>) and apply **Remove overlap** so the three boxes fuse into one H. Set the advance width to `600`.
+Select all (<kbd>⌘</kbd><kbd>A</kbd>) and click **Remove overlaps** under *Path Operations* in the Transformation panel, so the three boxes fuse into one H. In **Glyph info**, set both **sidebearings** to `60`: the advance width follows by itself, `600`. No need to deselect first.
 
 <h3 id="the-o">The o — two ellipses</h3>
 
-Add `o` in Preview text and create it. With the Shape tool in **ellipse** mode, draw an outer oval (x 40, y −10, w 420, h 520 — the overshoot below the baseline is intentional) and an inner oval (x 140, y 90, w 220, h 320). Select both and **Subtract** to punch the counter. Advance width `500`.
+Type `o` in Preview text, double-click its placeholder to create it, and again to edit it. **Hold the Shape tool down** to open its menu and pick the **ellipse**. Draw the outer oval (x 40, y −10, w 420, h 520 — the overshoot below the baseline is intentional), then the inner one (x 140, y 90, w 220, h 320) **holding <kbd>⌘</kbd> while you drag**: it is drawn the other way round, and a contour turning the other way is a counter. No path operation needed — that is how counters are drawn. Sidebearings `40` and `40`: advance width `500`.
+
+<div class="callout note"><div class="h">Why the direction matters</div><p>A font's outlines are filled by their direction: the outer contour of the o turns one way, the counter the other. Drawn the same way round, the inner oval would be filled too.</p></div>
 
 <div class="callout tip"><div class="h">Checkpoint</div><p>Typing <code>HoHoHo</code> in Preview text shows your two letters spelling like a font.</p></div>
 
@@ -87,7 +91,7 @@ Add `o` in Preview text and create it. With the Shape tool in **ellipse** mode, 
 
 <div class="video"><div class="play"></div><div class="cap">Axes dialog: New axis</div></div>
 
-Open **Font → Axes → New axis…** and fill in:
+Open **Font → Axes**, click **New axis…** and pick the **Weight** preset, then check:
 
 <table>
 <tbody>
@@ -106,9 +110,10 @@ Under **Axis values**, add two labels: `Regular` = 400 and `Black` = 900. The ex
 <div class="video"><div class="play"></div><div class="cap">virtual source → fatten stems</div></div>
 
 <ol class="steps">
-<li><strong>Font → Sources → New source…</strong>: name <code>Black</code>, location Weight = 900.</li>
-<li>In the Designspace panel, the <code>Black</code> source shows <strong>in grey</strong> — a <em>virtual</em> source. <strong>Double-click it</strong> to copy your current drawing there.</li>
-<li>With the slider at 900, drag the <em>inner</em> stem edges outward to fatten the H. Repeat for the o.</li>
+<li><strong>Font → Sources</strong>, then <strong>New font source…</strong>: name <code>Black</code>, location Weight = 900.</li>
+<li>Back in the editor, with the o still open, the <code>Black</code> source shows <strong>in grey</strong> under <em>Glyph sources</em> in the Designspace panel — a <em>virtual</em> source. <strong>Double-click it</strong> to copy the Regular's contours there.</li>
+<li>Hold the Pointer tool down and pick <strong>Pointer Tool (scaling)</strong>: select each point of the inner contour and shift it inwards — the handles follow along — so the o gets heavier.</li>
+<li>Open the H and do the same there: double-click <code>Black</code>, then drag the <em>inner</em> stem edges outward to fatten it.</li>
 </ol>
 
 <div class="callout warn">
@@ -120,7 +125,7 @@ Under **Axis values**, add two labels: `Regular` = 400 and `Black` = 900. The ex
 
 <div class="video"><div class="play"></div><div class="cap">the slider gliding, letters breathing</div></div>
 
-Type `HoHoHo` and drag the Weight slider slowly from 400 to 900. Your letters *glide* through every weight in between. Stop at 547 — that weight exists now, and nobody drew it. This is what **variable-first** means: you never configured interpolation, you never left it.
+Type `HoHoHo` and drag the Weight slider slowly from 400 to 900. Your letters *glide* through every weight in between. Stop anywhere: that weight exists now, and nobody drew it. What you see there is interpolated, so it is not editable — but the **+** under *Glyph sources* adds an editable source right at that location, the day you want to correct it. This is what **variable-first** means: you never configured interpolation, you never left it.
 
 <h2 id="export">7. Export and install</h2>
 

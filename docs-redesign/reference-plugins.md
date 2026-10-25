@@ -2,9 +2,9 @@
 title: "Plug-ins · Fontra Docs"
 description: "Reference: what Fontra expects from a plug-in — manifest, addresses, the editor object, panels, tools, visualization layers, Python entry points."
 layout: article.html
+status: ready
 top: reference
 active: plugins-r
-status: ready
 toc:
   - { id: editor-plug-ins, label: "Editor plug-ins" }
   - { id: plugin-json, label: "plugin.json", lvl3: true }
