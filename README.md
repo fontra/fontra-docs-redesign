@@ -76,7 +76,7 @@ Ready-to-review drafts of the user-facing pages the strategy calls for:
 ## Conventions
 
 - In the repo documents, **⚠** marks a claim that should be verified against the current Fontra builds/UI before publishing, and **🎬** a placeholder for a 10–20 second screen recording (the docs strategy argues every how-to should open with one). On the site, the same two things are the `verify` tag and the striped video placeholder; the site itself uses no emoji.
-- Every site page declares `status: ready` (written) or `status: planned` (outline only) in its front matter; the sidebar, hub cards, home page and *About these docs* show it. See [MAINTENANCE.md](MAINTENANCE.md).
+- Every site page declares `status: ready` (written) or `status: planned` (outline only) in its front matter; only planned pages are marked (sidebar, hub cards, page banner, *About these docs*). See [MAINTENANCE.md](MAINTENANCE.md).
 - Code-level statements cite the module they were read from; the Workflow material was verified against `fontra/fontra@e86dc88` and `fontra-compile@main`.
 
 ## Contributing / feedback

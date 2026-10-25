@@ -44,7 +44,7 @@ copied from the Fontra repository). What each group actually controls:
 | `--text` / `--text-soft` / `--text-faint` | headings & body / descriptions & ledes / metadata, breadcrumbs, labels |
 | `--accent` / `--accent-strong` / `--accent-soft` / `--accent-text` | **the brand spots**: CTA buttons, step-number circles, video play button, the active topbar and sidebar entries, "note" callouts, the "prototype" tag |
 | `--link` / `--link-soft` | links (a slightly darker red, for contrast on white) |
-| `--ok` + `--ok-soft` | success: checkpoint callouts, the "Written" status badge |
+| `--ok` + `--ok-soft` | success: checkpoint callouts |
 | `--warn` + `--warn-soft` | warnings and the "verify" tag |
 | `--code-bg` / `--code-text` / `--kbd-bg` | inline code, code blocks, keyboard keys |
 | `--sans` / `--mono` | the two font stacks |
@@ -111,7 +111,7 @@ labeled sections — find the comment banner, edit the rule:
 | `article typography` | h1–h3, lede, lists, images, hr, anchor links |
 | `tables`, `callouts`, `video placeholder`, `steps` | content components |
 | `pager`, `cards / hubs`, `badges` | navigation components |
-| `status badges` | the Written / Planned / verify tags and the page banner |
+| `status badges` | the Planned and verify tags and the page banner |
 | `home` | hero, CTA buttons, doors, homewrap |
 | `responsive` | the two breakpoints: ≤1080px (TOC hides), ≤860px (sidebar becomes a drawer) |
 

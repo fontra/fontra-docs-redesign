@@ -1,9 +1,9 @@
-# docs.fontra.xyz — redesign prototype
+# Fontra Docs — the site
 
-A navigable, static prototype proposing an update to [docs.fontra.xyz](https://docs.fontra.xyz) in both **shape** (information architecture + visual design) and **content** (what's written, and what's missing).
+The new [docs.fontra.xyz](https://docs.fontra.xyz): a static site that changes the previous docs in both **shape** (information architecture + visual design) and **content** (what's written, and what's missing).
 
 **Start here:** run `npm install && npm start` at the repo root and open
-`http://localhost:8080/docs-redesign/`. The prototype is built with
+`http://localhost:8080/docs-redesign/`. The site is built with
 [Eleventy (11ty)](https://www.11ty.dev/) — the same toolchain as fontra-blog
 and the proposed fontra-docs migration — so its templates and content
 conventions can graduate into the real docs site without a rewrite.
@@ -13,7 +13,7 @@ Each page is an `.html` template with YAML front matter (`title`,
 rendered at build time from `_data/nav.js` through `_includes/` and
 `_layouts/` at the repo root.
 
-## What's in the prototype
+## What's in the site
 
 | Page | Demonstrates |
 |---|---|
@@ -25,7 +25,7 @@ rendered at build time from `_data/nav.js` through `_includes/` and
 | `learn.html` · `guides.html` · `explanations.html` | Hub templates for the Diátaxis quadrants |
 | `workflow.html` | Proposed new section for the Workflow CLI (currently undocumented) |
 | `migrate.html` | Proposed new section: Rosetta-stone pages for Glyphs/RoboFont users |
-| `about-redesign.html` | **The written rationale** — what changed and why, and how it would be built |
+| `about.html` | **About these docs** — what changed and why, how the site is built, and the list of pages still to write |
 
 ## Design system
 
@@ -37,9 +37,9 @@ rendered at build time from `_data/nav.js` through `_includes/` and
 
 - Striped **video** placeholders = where a 10–20 s screen recording goes.
 - The **verify** tag = a claim to verify against the current app before publishing.
-- Every page has a `status:` — **Written** (real content, to review) or **Planned** (outline only) — shown in the sidebar, on hub cards, on the home page and in the status table of [`about-redesign.html`](about-redesign.html#status). Planned cards are not links.
+- Every page has a `status:` (`ready` or `planned`). Only planned pages are marked: in the sidebar, on hub cards, on the page itself and in the *Still to write* list of [`about.html`](about.html#status). Planned cards are not links; the home page lists the ready pages.
 - No emoji: titles and hierarchy carry the structure; the only pictograms are the inline SVG icons of the chrome.
 
 ## Status
 
-First draft for discussion. Copy is written but needs a review pass; the IA and page templates are the substance to react to. See [`about-redesign.html`](about-redesign.html) for the full proposal.
+Copy is written for the ready pages but needs a review pass against the current Fontra build; the planned pages are outlines. See [`about.html`](about.html) for the full proposal.

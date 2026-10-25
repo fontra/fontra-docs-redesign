@@ -26,7 +26,7 @@ active: reference
       <h2 id="font-menu">Font</h2>
       <div class="cardgrid">
         <div class="card planned"><div class="t">Font Info</div><div class="d">Names, version, metadata.</div><div class="meta"><span class="status planned">Planned</span></div></div>
-        {% assign st = collections.docsStatus["reference-axes.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="reference-axes.html"><div class="t">Axes</div><div class="d">Variation axes, mappings, value labels.</div><div class="meta"><span class="status ready">Written</span></div>{% if st == "planned" %}<div class="meta"><span class="status planned">Planned</span></div>{% endif %}</a>
+        {% assign st = collections.docsStatus["reference-axes.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="reference-axes.html"><div class="t">Axes</div><div class="d">Variation axes, mappings, value labels.</div>{% if st == "planned" %}<div class="meta"><span class="status planned">Planned</span></div>{% endif %}</a>
         <div class="card planned"><div class="t">Cross-axis mapping</div><div class="d">avar-2 designspace mapping.</div><div class="meta"><span class="status planned">Planned</span></div></div>
         {% assign st = collections.docsStatus["font-sources.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="font-sources.html"><div class="t">Sources</div><div class="d">Masters: location, line metrics, italic angle.</div>{% if st == "planned" %}<div class="meta"><span class="status planned">Planned</span></div>{% endif %}</a>
         <div class="card planned"><div class="t">Features</div><div class="d">OpenType feature code (FEA).</div><div class="meta"><span class="status planned">Planned</span></div></div>
@@ -35,10 +35,10 @@ active: reference
 
       <h2 id="extending">Extending Fontra</h2>
       <div class="cardgrid">
-        {% assign st = collections.docsStatus["reference-plugins.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="reference-plugins.html"><div class="t">Plug-ins</div><div class="d">The manifest, address rules, the <code>editor</code> object, panels, tools, visualization layers and Python entry points.</div><div class="meta"><span class="status ready">Written</span> · <a href="writing-plugins.html">Guide</a></div></a>
+        {% assign st = collections.docsStatus["reference-plugins.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="reference-plugins.html"><div class="t">Plug-ins</div><div class="d">The manifest, address rules, the <code>editor</code> object, panels, tools, visualization layers and Python entry points.</div><div class="meta">See also the <a href="writing-plugins.html">guide</a></div></a>
         {% assign st = collections.docsStatus["action-reference.html"] %}<a class="card{% if st == "planned" %} planned{% endif %}" href="action-reference.html"><div class="t">Workflow actions</div><div class="d">Every action of <code>fontra-workflow</code> and its arguments.</div><div class="meta">{% if st == "planned" %}<span class="status planned">Planned</span> · {% endif %}Workflow</div></a>
       </div>
 
-      <div class="callout note"><div class="h">Proposed addition</div><p>A <strong>generated</strong> reference for Workflow actions and (once it ships) the scripting API — built from source so it never goes stale. See <a href="about-redesign.html#generated">About these docs</a>.</p></div>
+      <div class="callout note"><div class="h">Coming later</div><p>A <strong>generated</strong> reference for Workflow actions and (once it ships) the scripting API — built from source so it never goes stale. See <a href="about.html#generated">About these docs</a>.</p></div>
     </article>
   </div>

@@ -59,17 +59,16 @@
 {%- if showReady %}
   <section class="homesection" id="written">
   <h2>Written so far</h2>
-  <p class="sectionlede">These pages have real content you can read today ({{ collections.docsReady.size }} of {{ collections.docsPages.size }} pages). Everything else in the sidebar is an outline, marked <span class="status planned">Planned</span>.</p>
+  <p class="sectionlede">The pages you can read today. The rest of the sidebar is still being written and is marked <span class="status planned">Planned</span>.</p>
   <div class="cardgrid">
     {%- for p in collections.docsReady %}
     <a class="card" href="{{ p.href }}">
       <div class="t">{{ p.title }}</div>
       <div class="d">{{ p.description }}</div>
-      <div class="meta"><span class="status ready">Written</span></div>
     </a>
     {%- endfor %}
   </div>
-  <p class="muted small"><a href="about-redesign.html#status">Full page status list</a></p>
+  <p class="muted small"><a href="about.html#status">What is still to come</a></p>
   </section>
 {%- endif %}
 

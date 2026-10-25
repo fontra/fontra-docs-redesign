@@ -80,10 +80,11 @@ Things to know:
   (Migrate, Understand).
 - `status:` is the page's state, and the **only place it is declared**:
   `ready` means the content is written (it may still need review),
-  `planned` means an outline with no content yet. The build turns it into
-  the banner at the top of the page, the *Planned* badge in the sidebar and
-  on hub cards, the home page's *Written so far* section and the status
-  table on *About these docs*. Hub pages have no `status:`. When you
+  `planned` means an outline with no content yet. Written pages show
+  nothing; planned pages get a banner at the top, a *Planned* badge in the
+  sidebar and on hub cards, and a line in the *Still to write* list on
+  *About these docs*. The home page's *Written so far* section lists the
+  ready pages. Hub pages have no `status:`. When you
   finish writing a planned page, change `planned` to `ready` and everything
   updates.
 - Headings (`##`) automatically get ids and `#` anchor links, and feed the
