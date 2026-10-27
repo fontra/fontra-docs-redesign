@@ -1,17 +1,21 @@
 {
 	"name": "fontra-docs-redesign",
-	"version": "1.0.0",
-	"description": "Redesign prototype for docs.fontra.xyz, built with Eleventy",
+	"version": "2.0.0",
+	"description": "Preview of the redesigned docs.fontra.xyz: the full content of fontra-docs, at the same URLs, with the new theme and navigation",
 	"type": "module",
 	"scripts": {
-		"build": "npx @11ty/eleventy",
-		"start": "npx @11ty/eleventy --serve --quiet"
+		"build": "PATH_PREFIX=/fontra-docs-redesign/ SITE_URL=https://fontra.github.io/fontra-docs-redesign VIDEO_BASE=https://docs.fontra.xyz npx @11ty/eleventy",
+		"start": "PATH_PREFIX=/fontra-docs-redesign/ VIDEO_BASE=https://docs.fontra.xyz npx @11ty/eleventy --serve --quiet",
+		"check-urls": "node scripts/check-url-parity.mjs",
+		"check-links": "PATH_PREFIX=/fontra-docs-redesign/ SITE_URL=https://fontra.github.io/fontra-docs-redesign VIDEO_BASE=https://docs.fontra.xyz node scripts/check-links.mjs"
 	},
-	"license": "MIT",
+	"license": "CC-BY-4.0",
 	"engines": {
 		"node": ">=18"
 	},
 	"devDependencies": {
-		"@11ty/eleventy": "^3.0.0"
+		"@11ty/eleventy": "^3.0.0",
+		"markdown-it-anchor": "^9.2.0",
+		"markdown-it-attrs": "^4.3.1"
 	}
 }

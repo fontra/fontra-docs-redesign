@@ -1,5 +1,7 @@
 # Documentation maintenance manual
 
+> **October 2026.** This repository now holds the full redesigned site (every page of docs.fontra.xyz at its URL, plus the new pages), ready to become a pull request on fontra-docs. The layout of the files changed accordingly: see the README's *How the site is organized*. The sections below describe the previous prototype layout (`docs-redesign/*.html`, `top:`/`active:` front matter) and are kept for the explanations of the mental model, Eleventy and GitHub Pages, which still apply.
+
 How the Fontra documentation sites are built, edited and published — written
 for maintainers, no web-development background assumed.
 

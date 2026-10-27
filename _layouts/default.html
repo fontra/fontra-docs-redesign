@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% include "head.html" %}
+</head>
+<body>
+{% assign top = page.url | nav_top %}
+{% include "topbar.html" %}
+<div class="layout">
+  <aside class="sidebar">
+    {{ page.url | sidebar: collections.docsStatus }}
+    <div class="sidefoot"><a href="/about/">About these docs</a></div>
+  </aside>
+  <main class="content">
+{%- assign toc = content | toc %}
+{%- assign crumbs = page.url | breadcrumb %}
+{%- assign prevPage = page.url | nav_prev %}
+{%- assign nextPage = page.url | nav_next %}
+<div class="page{% if toc.size < 2 %} no-toc{% endif %}">
+  <article class="article">
+    <div class="breadcrumb"><a href="/">Docs</a>{% for c in crumbs %} › <a href="{{ c.href }}">{{ c.label }}</a>{% endfor %} › {{ title }}</div>
+    <h1>{{ title }}</h1>
+{% include "status.html" %}
+{{ content }}
+{%- if prevPage or nextPage %}
+    <div class="pager">
+      {%- if prevPage %}
+      <a class="prev" href="{{ prevPage.href }}"><div class="dir">← Previous</div><div class="ttl">{{ prevPage.title }}</div></a>
+      {%- else %}
+      <span></span>
+      {%- endif %}
+      {%- if nextPage %}
+      <a class="next" href="{{ nextPage.href }}"><div class="dir">Next →</div><div class="ttl">{{ nextPage.title }}</div></a>
+      {%- endif %}
+    </div>
+{%- endif %}
+    <div class="editline">
+      <a href="https://github.com/fontra/fontra-docs/edit/main/{{ page.inputPath | remove_first: "./" }}" target="_blank" rel="noopener">Improve this page on GitHub</a>
+      · This documentation is licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+      · Built {{ site.time | date: "%Y-%m-%d" }}
+    </div>
+  </article>
+{%- if toc.size >= 2 %}
+  <nav class="toc" aria-label="On this page">
+    <div class="lbl">On this page</div>
+    {%- for t in toc %}
+    <a href="#{{ t.id }}"{% if t.lvl3 %} class="lvl3"{% endif %}>{{ t.label }}</a>
+    {%- endfor %}
+  </nav>
+{%- endif %}
+</div>
+  </main>
+</div>
+<div class="scrim"></div>
+<script src="/assets/app.js"></script>
+</body>
+</html>

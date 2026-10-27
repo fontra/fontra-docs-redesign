@@ -25,17 +25,8 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - name: Check expected outputs
-        run: |
-          for f in index.html \
-                   docs-redesign/index.html \
-                   docs-redesign/get-started.html \
-                   docs-redesign/tutorial-first-font.html \
-                   docs-redesign/reference.html \
-                   docs-redesign/assets/style.css \
-                   docs-redesign/assets/app.js; do
-            test -f "_site/$f" || { echo "MISSING _site/$f"; exit 1; }
-          done
+      - run: npm run check-urls
+      - run: npm run check-links
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

@@ -1,77 +1,102 @@
-# Fontra Docs
+# Fontra Docs — redesign preview
 
-The documentation site of **[Fontra](https://fontra.xyz)** — the open-source, browser-based, variable-first font editor — plus the notes and strategy documents it grew out of.
+Preview at [fontra.github.io/fontra-docs-redesign](https://fontra.github.io/fontra-docs-redesign/).
 
-This repo came out of a working session (June 2026) that started with one question — *what is Fontra's philosophy?* — and kept pulling the thread: how the Workflow engine works, what friendlier UX for it could look like, and which documentation would bring more users in. The analysis is grounded in Fontra's actual source code (claims were verified against [`fontra/fontra`](https://github.com/fontra/fontra) at commit `e86dc88` and `main`), its [docs](https://docs.fontra.xyz), [blog](https://blog.fontra.xyz), and the ATypI 2023 slides. Drafted with AI assistance, directed and reviewed by a human who knows where the bodies are buried.
+This repository is the **redesigned [fontra-docs](https://github.com/fontra/fontra-docs)**:
+the full content of docs.fontra.xyz (every page, at the same URL), with a new
+theme and navigation, plus the new pages written for the redesign. It is a
+copy of fontra-docs with the redesign applied, published here for review;
+once agreed, the same commit goes to fontra-docs as a pull request and this
+site will redirect to docs.fontra.xyz.
 
-**Status:** the site (`docs-redesign/`) is live documentation in progress: written pages are drafts to review against the current Fontra build, planned pages are outlines marked as such. The repo documents (`understanding/`, `strategy/`, `drafts/`) are working notes; each ends with open questions inviting feedback.
+Differences from fontra-docs are confined to `package.json` (the build sets
+`PATH_PREFIX`, `SITE_URL` and `VIDEO_BASE`, because this preview lives under a
+sub-path and uses the videos of the live site rather than carrying them) and
+to the deployment workflow. Everything below applies to both.
 
----
+Built with [Eleventy (11ty)](https://www.11ty.dev/) — the same generator as
+[fontra-blog](https://github.com/fontra/fontra-blog).
 
-## Repo map
+## Building the site locally
 
-### `understanding/` — what Fontra is
-
-| Document | Contents |
-|---|---|
-| [philosophy.md](understanding/philosophy.md) | Fontra's five design commitments: variable-first, browser as cross-platform layer, strict separation of concerns, interoperate-don't-capture, community sustainability |
-
-### Workflow UI: moved to its own repository
-
-The Workflow engine analysis, the draft Workflow documentation, the proposed extensions and the clickable mockup of a graphical Workflow view now live in [fontra-workflow-ui](https://github.com/fontra/fontra-workflow-ui), where the view is being built as a Fontra extension. They moved with their history.
-
-## Building the site
-
-The published site (`/` redirects to `/docs-redesign/`) is built with [Eleventy (11ty)](https://www.11ty.dev/) — the same
-generator as fontra-blog and the proposed fontra-docs migration:
+Requires [Node.js](https://nodejs.org/) 18 or newer.
 
 ```
 npm install
-npm start        # live-reloading dev server
-npm run build    # production build in _site/
+npm start
 ```
 
-Pushes to `main` are deployed to GitHub Pages by
-[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)
-(the repo's Pages settings must be set to "GitHub Actions").
-The written documents (`understanding/`, `strategy/`, `drafts/`) are repo documents, not site pages — read them on GitHub.
+Then open the address shown in the terminal (usually `http://localhost:8080`).
+The dev server rebuilds and reloads on every change.
 
-### `strategy/` — growing the user base
+To produce a production build in `_site/`:
 
-| Document | Contents |
-|---|---|
-| [documentation-strategy.md](strategy/documentation-strategy.md) | The plan: three audiences (beginners, migrants, engineers), three doors; time-to-first-glyph tutorial, video-first how-tos, Workflow cookbook, Rosetta-stone pages, zero-install demo — with sequencing and metrics |
-| [zero-install-deployment.md](strategy/zero-install-deployment.md) | Deployment plan for a public `try.fontra.xyz`: a read-only showcase (days) and ephemeral sandboxes (weeks), plus the three real blockers found in the source — path handling, missing server-side export, no tenancy |
+```
+npm run build
+npm run check-urls   # verifies all expected URLs exist in _site/
+```
 
-### `drafts/` — strategy made concrete
+## How the site is organized
 
-Ready-to-review drafts of the user-facing pages the strategy calls for:
+- `content/` — all pages, as Markdown with YAML front matter, by section:
+  `introduction/`, `get-started/`, `tutorials/`, `how-tos/`, `reference/`,
+  `explanations/`, `migrate/`, `workflow/`, plus `index.html` (home) and
+  `about.md`.
+- `_data/nav.js` — **the one map of the site**: the top bar, the sidebar,
+  the breadcrumb and the prev/next links are all rendered from this tree,
+  keyed by page URL. Adding a page means adding its URL there, where it
+  belongs. The build fails if a URL in the tree is not a page.
+- `content/assets/` — `style.css` (light and dark, CSS variables), `app.js`
+  (theme toggle, mobile sidebar, heading anchors, scroll-spy), `fonts/`
+  (Inria Sans, the typeface of Fontra's interface).
+- `_layouts/default.html` (every page), `_layouts/home.html` (the home
+  page), `_includes/` — the templates (Liquid).
+- `_data/site.js` — site-wide values (`site.url`, `site.title`, …).
+- `images/`, `videos/` — static assets, copied as-is (this preview has no
+  `videos/`: `VIDEO_BASE` points the players at docs.fontra.xyz).
+- `eleventy.config.js` — build configuration: the navigation helpers, the
+  `cardgrid` shortcode used by the hub pages, and a kramdown-compatibility
+  layer (see comments there) so the Markdown written for the previous
+  Jekyll setup renders unchanged (`{: .lead }`, `alert alert-primary`,
+  definition lists, …; `style.css` maps those class names onto the
+  current components).
+- `scripts/check-url-parity.mjs` — asserts that every URL the site has
+  ever served still exists in the build output, and that every link of
+  the navigation tree resolves.
 
-| Document | Contents |
-|---|---|
-| [tutorial-your-first-variable-font.md](drafts/tutorial-your-first-variable-font.md) | The beginner tutorial: download → two glyphs from primitive shapes → Weight axis → second source → live interpolation → exported, installable variable font. Under 30 minutes, zero prior knowledge |
-| [fontra-for-glyphs-users.md](drafts/fontra-for-glyphs-users.md) | Rosetta stone for Glyphs users: vocabulary map (masters→sources, brace layers→glyph sources, smart components→variable components…), shortcuts, honest gaps, zero-risk side-by-side workflow |
-| [fontra-for-robofont-users.md](drafts/fontra-for-robofont-users.md) | Rosetta stone for RoboFont users: shared UFO/designspace model, precision auto-reload, what scripting users will miss (and what Workflow already covers) |
+### Front matter
 
+```
 ---
+title: Page title
+description: One sentence, shown on the cards that link to the page.
+permalink: /section/page-name/
+status: ready        # or `planned` for an outline that is not written yet
+---
+```
 
-## Suggested reading paths
+Permalinks are explicit and must not be changed casually — existing links
+into docs.fontra.xyz depend on them (`npm run check-urls` guards this).
+`layout` defaults to `default.html` and `status` to `ready`; a page marked
+`planned` gets a badge in the sidebar, on hub cards and at its top, and is
+listed on the About page.
 
-- **"What is Fontra, really?"** → `understanding/philosophy.md`
-- **"I produce fonts and want the pipeline"** → the Workflow section of the docs site, and [fontra-workflow-ui](https://github.com/fontra/fontra-workflow-ui) for the engine analysis
-- **"How do we get more users?"** → `strategy/documentation-strategy.md` → the `drafts/`
-- **"Show me something fun"** → the mockup in [fontra-workflow-ui](https://github.com/fontra/fontra-workflow-ui)
+### Writing conventions
 
-## Conventions
+- Headings carry the hierarchy; no emoji, no decorative pictograms.
+- A claim that must be checked against the current Fontra build is tagged
+  `<span class="verify">verify</span>`.
+- `<div class="video">…</div>` is a striped frame marking where a short
+  screen recording goes; real recordings are `<video>` elements from
+  `videos/`.
+- Hub pages list their pages with the `cardgrid` shortcode, one URL per
+  line; title, description and status come from the linked page.
 
-- In the repo documents, **⚠** marks a claim that should be verified against the current Fontra builds/UI before publishing, and **🎬** a placeholder for a 10–20 second screen recording (the docs strategy argues every how-to should open with one). On the site, the same two things are the `verify` tag and the striped video placeholder; the site itself uses no emoji.
-- Every site page declares `status: ready` (written) or `status: planned` (outline only) in its front matter; only planned pages are marked (sidebar, hub cards, page banner, *About these docs*). See [MAINTENANCE.md](MAINTENANCE.md).
-- Code-level statements cite the module they were read from.
+## Deployment
 
-## Contributing / feedback
+Pushes to `main` are built and deployed to GitHub Pages by
+[`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
-Open an issue or PR — or pick any document and answer the *open questions* at its end. The drafts in `drafts/` are intended to eventually graduate, in some form, to [fontra-docs](https://github.com/fontra/fontra-docs) (CC BY 4.0), so feedback that moves them closer to publishable is the most valuable kind.
+# Credits
 
-## License
-
-CC BY 4.0
+[Gustavo Ferreira](https://github.com/gferreira) initiated this documentation

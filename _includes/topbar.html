@@ -1,13 +1,13 @@
 <header class="topbar">
   <button class="iconbtn menuToggle" onclick="toggleNav()" aria-label="Menu">{% assign icon = "menu" %}{% include "icons.html" %}</button>
-  <a class="brand" href="index.html"><img class="mark" src="assets/img/fontra-icon.svg" alt="" width="26" height="26"><span class="name">Fontra</span><span class="docs">Docs</span></a>
+  <a class="brand" href="/"><img class="mark" src="/images/icons/fontra-icon.svg" alt="" width="26" height="26"><span class="name">Fontra</span><span class="docs">Docs</span></a>
   <nav class="topnav" aria-label="Sections">
     {%- for item in nav.topnav %}
     <a href="{{ item.href }}"{% if item.id == top %} class="on" aria-current="page"{% endif %}>{{ item.label }}</a>
     {%- endfor %}
   </nav>
   <div class="spacer"></div>
-  <button class="searchbox" onclick="mockSearch()" type="button">{% assign icon = "search" %}{% include "icons.html" %}<span>Search docs</span><span class="k">⌘K</span></button>
+  <a class="toplink" href="https://fontra.xyz" title="fontra.xyz">fontra.xyz</a>
   <button class="iconbtn" onclick="toggleTheme()" aria-label="Switch light / dark theme" title="Light / dark">{% assign icon = "theme" %}{% include "icons.html" %}</button>
   <a class="iconbtn" href="https://github.com/fontra/fontra" title="Fontra on GitHub" target="_blank" rel="noopener" aria-label="Fontra on GitHub">{% assign icon = "github" %}{% include "icons.html" %}</a>
 </header>

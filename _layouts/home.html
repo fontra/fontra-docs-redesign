@@ -4,6 +4,7 @@
 {% include "head.html" %}
 </head>
 <body>
+{% assign top = "" %}
 {% include "topbar.html" %}
 <main class="homewrap">
 
@@ -22,6 +23,9 @@
       {%- endfor %}
     </div>
   </section>
+  {%- if hero.image %}
+  <img class="heroshot" src="{{ hero.image }}" alt="{{ hero.imageAlt }}" loading="eager">
+  {%- endif %}
 {%- endif %}
 
 {%- if doors %}
@@ -37,47 +41,12 @@
   </div>
 {%- endif %}
 
-{%- for section in sections %}
-  <section class="homesection">
-  <h2>{{ section.heading }}</h2>
-  {%- if section.text %}<p class="sectionlede">{{ section.text }}</p>{% endif %}
-  <div class="cardgrid">
-    {%- for c in section.cards %}
-    <a class="card" href="{{ c.href }}">
-      <div class="t">{{ c.title }}</div>
-      <div class="d">{{ c.desc }}</div>
-      {%- if c.meta %}
-      <div class="meta">{{ c.meta }}</div>
-      {%- endif %}
-    </a>
-    {%- endfor %}
-  </div>
-  </section>
-{%- endfor %}
-
-{%- if showReady %}
-  <section class="homesection" id="written">
-  <h2>Written so far</h2>
-  <p class="sectionlede">The pages you can read today. The rest of the sidebar is still being written and is marked <span class="status planned">Planned</span>.</p>
-  <div class="cardgrid">
-    {%- for p in collections.docsReady %}
-    <a class="card" href="{{ p.href }}">
-      <div class="t">{{ p.title }}</div>
-      <div class="d">{{ p.description }}</div>
-    </a>
-    {%- endfor %}
-  </div>
-  <p class="muted small"><a href="about.html#status">What is still to come</a></p>
-  </section>
-{%- endif %}
-
 {{ content }}
 
-{%- if footnote %}
-  <p class="center muted footnote">{{ footnote }}</p>
-{%- endif %}
+  <footer class="homefoot">
+    <p class="muted small">Fontra is free software, <a href="https://github.com/fontra/fontra">GPLv3</a>. This documentation is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>. <a href="/about/">About these docs</a> · Built {{ site.time | date: "%Y-%m-%d" }}.</p>
+  </footer>
 </main>
-<div class="scrim" onclick="toggleNav()"></div>
-<script src="assets/app.js"></script>
+<script src="/assets/app.js"></script>
 </body>
 </html>

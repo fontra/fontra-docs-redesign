@@ -1,10 +1,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{% if description %}<meta name="description" content="{{ description }}">
-{% endif %}<link rel="icon" href="assets/img/fontra-icon.svg" type="image/svg+xml">
+{% if description %}<meta name="description" content="{{ description | escape }}">
+{% endif %}<link rel="icon" href="/images/icons/fontra-icon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#f11759">
-<title>{{ title }}</title>
-<link rel="preload" href="assets/fonts/InriaSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/InriaSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/style.css">
+<title>{{ title }}{% unless page.url == "/" %} · {{ site.title }}{% endunless %}</title>
+<link rel="preload" href="/assets/fonts/InriaSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/InriaSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/style.css">
 <script>(function(){try{var t=localStorage.getItem("fontra-docs-theme");if(t)document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<script defer data-domain="docs.fontra.xyz" src="https://plausible.io/js/script.file-downloads.outbound-links.js"></script>
+<script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
